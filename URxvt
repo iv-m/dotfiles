@@ -1,0 +1,51 @@
+
+
+URxvt.font:  -xos4-terminus-medium-r-normal-*-14-*-*-*-*-iso10646-1
+URxvt.depth: 32
+//URxvt.background: rgba:3000/1800/0000/e700
+// URxvt.geometry: 100x40
+URxvt.foreground: white
+//URxvt.foreground: black
+URxvt.fading: 22
+URxvt.fadeColor: black
+//URxvt.background: #0c1000
+URxvt.background: #0F1b00
+//URxvt.background: #50A0A0
+URxvt.jumpScroll: true
+URxvt.skipScroll: true
+URxvt.inheritPixmap: false
+URxvt.internalBorder: 0
+//URxvt.tintColor: white
+//URxvt.shading: 50
+URxvt.perl-ext:
+URxvt.perl-ext-common:
+URxvt.url-launcher: /usr/bin/firefox
+URxvt.matcher.button: 1
+URxvt.scrollBar: false
+URxvt.scrollTtyOutput: false
+URxvt.scrollTtyKeypress: true
+URxvt.urgentOnBell: true
+// URxvt.termName: xterm
+// URxvt*keysym.Home: \033OH
+// URxvt*keysym.End: \033OF
+// URxvt*keysym.S-Home: \033[1;2H
+// URxvt*keysym.S-End: \033[1;2F
+// URxvt*keysym.C-Home: \033[1;5H
+// URxvt*keysym.C-End: \033[1;5F
+// URxvt*keysym.F1: \033OP
+// URxvt*keysym.F2: \033OQ
+// URxvt*keysym.F3: \033OR
+// URxvt*keysym.F4: \033OS
+// URxvt*keysym.S-F1: \033O2P
+// URxvt*keysym.S-F2: \033O2Q
+// URxvt*keysym.S-F3: \033O2R
+// URxvt*keysym.S-F4: \033O2S
+URxvt*keysym.C-Page_Up: \033[5;5~
+URxvt*keysym.C-Page_Down: \033[6;6~
+URxvt*keysym.M-C-1: command:\033]50;-xos4-terminus-medium-r-normal-*-12-*-*-*-*-iso10646-1\007
+URxvt*keysym.M-C-2: command:\033]50;-xos4-terminus-medium-r-normal-*-14-*-*-*-*-iso10646-1\007
+URxvt*keysym.M-C-3: command:\033]50;-xos4-terminus-medium-r-normal-*-20-*-*-*-*-iso10646-1\007
+URxvt*keysym.M-C-4: command:\033]50;-xos4-terminus-medium-r-normal-*-24-*-*-*-*-iso10646-1\007
+URxvt*keysym.M-C-5: command:\033]50;-xos4-terminus-medium-r-normal-*-28-*-*-*-*-iso10646-1\007
+URxvt*keysym.M-C-6: command:\033]50;-xos4-terminus-medium-r-normal-*-32-*-*-*-*-iso10646-1\007
+// URxvt*keysym.M-C-4: command:\033]50;-xos4-terminus-medium-r-normal-*-20-*-*-*-*-iso10646-1\007\033[8;38;128t
