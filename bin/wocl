@@ -1,0 +1,16 @@
+#!/bin/bash -e
+
+FORMAT='+%a %Y-%m-%d %H:%M:%S %Z (%z)'
+export LANG=C
+# echo -n 'SRT:  '
+TZ='Europe/Saratov' date "$FORMAT" "$@"
+# echo -n 'MSK:  '
+TZ='Europe/Moscow' date "$FORMAT" "$@"
+# echo -n 'EEST: '
+TZ='Europe/Kiev' date "$FORMAT" "$@"
+# echo -n 'PST:  '
+TZ='US/Pacific' date "$FORMAT" "$@"
+# echo -n 'CDT:  '
+TZ='America/Chicago' date "$FORMAT" "$@"
+# echo -n 'UTC:  '
+TZ='UTC' date "$FORMAT" "$@"

@@ -1,0 +1,4 @@
+#!/bin/bash
+
+exec urxvt -e mosh ${1:-gd-ws} --server='systemd-run --scope --user mosh-server new' -- tmux att
+
