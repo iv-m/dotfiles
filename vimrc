@@ -198,6 +198,22 @@ au Syntax * RainbowParenthesesLoadBraces
 
 " }}}
 
+" {{{ CtrlP
+
+let g:ctrlp_map = '<Leader>e'
+let g:ctrlp_use_caching=0
+let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:15,results:50'
+let g:ctrlp_user_command = {
+  \ 'types': {
+    \ 1: ['.git', 'cd %s && git ls-files -co --exclude-standard'],
+    \ 2: ['.hg', 'hg --cwd %s locate -I .'],
+    \ },
+  \ 'fallback': 'find %s -type f'
+  \ }
+
+
+" }}}
+
 " {{{ External commands
 
 nmap <Leader>g :echo system("gh-link " . shellescape(expand("%")) . " " . line("."))<CR>
