@@ -34,6 +34,7 @@ syntax on
 colorscheme ron
 hi link Operator Statement
 hi link Label Statement
+hi Title ctermfg=213
 
 set tabstop=8
 set shiftwidth=4
@@ -92,6 +93,19 @@ let g:is_bash=1
 
 " java
 let java_allow_cpp_keywords = 1
+
+" json
+let g:vim_json_syntax_conceal = 0
+
+" markdown
+let g:vim_markdown_conceal = 0
+let g:vim_markdown_fenced_languages = ['bash=sh', 'java', 'python', 'html', 'javascript']
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_new_list_item_indent = 2
+
+autocmd filetype markdown hi link mkdCode PreProc
+autocmd filetype markdown hi mkdCodeStart cterm=bold ctermfg=16 ctermbg=43
+autocmd filetype markdown hi link mkdCodeEnd mkdCodeStart
 
 " c family
 set cinoptions=:0h4i0g0(0W2s
@@ -177,10 +191,10 @@ let g:rbpt_colorpairs = [
     \ ['white',       'White'],
     \ ]
 
-" au VimEnter * RainbowParenthesesToggle
-" au Syntax * RainbowParenthesesLoadRound
-" au Syntax * RainbowParenthesesLoadSquare
-" au Syntax * RainbowParenthesesLoadBraces
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
 
 " }}}
 
