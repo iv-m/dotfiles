@@ -1,0 +1,232 @@
+#!/usr/bin/env python
+
+
+"""Git Spell -- spell-checker for commits.
+
+Usage:
+    git spell [older-commit [newer-commit]]
+"""
+
+
+import collections
+import os
+import re
+import subprocess
+import sys
+
+
+class CommandFailed(RuntimeError):
+
+    def __init__(self, cmdline, code, stdout, stderr):
+        message = "Command %s failed, return code = %s" % (cmdline[0], code)
+        super(RuntimeError, self).__init__(message)
+        self.cmdline = cmdline
+        self.code = code
+        self.stdout = stdout
+        self.stderr = stderr
+
+    def __str__(self):
+        result = '%s\nCommand line: %s' % (
+            self.args[0], subprocess.list2cmdline(self.cmdline))
+        if self.stdout:
+            result += ('\n---<<< Begin captured STDOUT >>>---\n%s'
+                       '---<<< End captured STDOUT >>>---\n' % self.stdout)
+        if self.stderr:
+            result += ('\n---<<< Begin captured STDERR >>>---\n%s'
+                       '---<<< End captured STDERR >>>---\n' % self.stderr)
+        return result
+
+
+def run_command(*args, **kwargs):
+    encoding = kwargs.pop('encoding', 'utf-8')
+    stdin = kwargs.pop('stdin', None)
+    cmdline = [str(arg) for arg in args]
+
+    obj = subprocess.Popen(cmdline,
+                           stdin=subprocess.PIPE,
+                           stdout=subprocess.PIPE,
+                           stderr=subprocess.PIPE)
+    output = obj.communicate(stdin)
+    rc = obj.wait()
+    if rc != 0:
+        exc = CommandFailed(cmdline, rc,
+                            output[0].decode(encoding),
+                            output[1].decode(encoding))
+        raise exc
+    return output[0].decode(encoding)
+
+
+NO_WORD_SYMBOL = re.compile(r'[\W\d_]')
+CAMEL_CASE_BORDER = re.compile(r'([a-z])([A-Z])')
+MIN_LENGTH = 3
+TOPLEVEL_DIR = run_command('git', 'rev-parse', '--show-toplevel').strip()
+
+
+def words_from_line(line):
+    line = NO_WORD_SYMBOL.sub(' ', line)
+    line = CAMEL_CASE_BORDER.sub(r'\1 \2', line)
+    line = line.lower()
+    return [w for w in line.split() if len(w) >= MIN_LENGTH]
+
+WordLocation = collections.namedtuple('WordLocation',
+                                      ['name', 'line_num', 'line'])
+
+class WordStorage(object):
+
+    def __init__(self):
+        self._words = collections.defaultdict(set)
+
+    def add_lines(self, name, iterable):
+        for idx, line in enumerate(iterable, 1):
+            line = line.strip()
+            loc = WordLocation(name=name, line_num=idx, line=line)
+            for word in words_from_line(line):
+                self._words[word].add(loc)
+
+    def forget(self, words):
+        for word in words:
+            self._words.pop(word, None)
+
+    def remember_only(self, words):
+        ws = self.words() - set(words)
+        self.forget(ws)
+
+    def forget_from(self, iterable):
+        words = set(w for line in iterable for w in words_from_line(line))
+        self.forget(words)
+
+    def __len__(self):
+        return len(self._words)
+
+    def words(self):
+        return set(self._words.keys())
+
+    def locations(self, word):
+        locs =  self._words.get(word, ())
+        for l in locs:
+            if any(ord(x) > 127 for x in l.line):
+                print l
+        return self._words.get(word, ())
+
+    def format(self):
+        result = []
+        for word in sorted(self._words):
+            locs = sorted('%s:%s: %s' % (loc.name, loc.line_num, loc.line.decode('utf-8'))
+                          for loc in self.locations(word))
+            result.append('>>> %s\n%s\n' % (word, '\n'.join(locs)))
+        return '\n'.join(result)
+
+
+def ispell(words):
+    result = run_command('ispell', '-l', '-C', '-den',
+                         stdin=' '.join(words))
+    return result.split()
+
+
+def grep_for(wrong_words, older):
+    pattern = r'\|'.join(wrong_words)
+    result = set(wrong_words)
+    try:
+        out = run_command('git', 'grep', '-i', pattern, older)
+    except CommandFailed:
+        return result
+    for line in out.splitlines():
+        for word in words_from_line(line.split(':', 2)[-1]):
+            result.discard(word)
+        if not result:
+            break
+    return result
+
+
+def git_diff_names(older, newer):
+    args = ['git', 'diff', '--name-only', older]
+    if newer is not None:
+        args.append(newer)
+    out = run_command(*args)
+    return [l.strip() for l in out.splitlines()]
+
+
+def iter_lines(commit, path):
+    if commit is None:
+        try:
+            full_path = os.path.join(TOPLEVEL_DIR, path)
+            with open(full_path) as f:
+                content = f.read()
+        except IOError:
+            return []
+    else:
+        try:
+            content = run_command('git', 'show', '%s:%s' % (commit, path))
+        except CommandFailed:
+            return []
+    if '\0' in content:
+        print("Ignoring %s: it's probably binary" % path)
+        return []
+    return content.splitlines()
+
+
+def list_commit_ids(older, newer=None):
+    if not newer:
+        newer = 'HEAD'
+    out = run_command('git', 'log', '--format=%H',
+                      '%s..%s' % (older, newer))
+    return [x.strip() for x in out.splitlines()]
+
+
+def commit_message(what):
+    return run_command('git', 'log', '-1', '--format=%B', what)
+
+
+def check(older, newer):
+    ws = WordStorage()
+    names = git_diff_names(older, newer)
+    if not names:
+        print('No changes to check spelling')
+        return 1
+    for name in names:
+        try:
+            ws.add_lines(name, iter_lines(newer, name))
+        except Exception as ex:
+            print("Failed to read %s: %s" % (name, ex))
+
+    for commit_id in list_commit_ids(older, newer):
+        message = commit_message(commit_id)
+        lines = (line for line in message.splitlines()
+                 if not line.startswith('Change-Id:'))
+        ws.add_lines('LOG@%s' % commit_id[:9], lines)
+
+    for name in names:
+        ws.forget_from(iter_lines(older, name))
+
+    name_lines = run_command('git', 'log',
+                             '--format="%cN %cE %aN %aE"').splitlines()
+    ws.forget_from(set(name_lines))
+
+    if not ws:
+        return
+    wrong_words = ispell(ws.words())
+    if not wrong_words:
+        return
+    wrong_new_words = grep_for(wrong_words, older)
+    ws.remember_only(wrong_new_words)
+    print(ws.format())
+    return 1 if ws else 0
+
+
+def main(args):
+    if len(args) == 0:
+        older = 'HEAD'
+        newer = None
+    elif len(args) == 1:
+        older = args[0]
+        newer = None
+    elif len(args) == 2:
+        older = args[0]
+        newer = args[1]
+    else:
+        print(__doc__)
+        return 1
+    return check(older, newer)
+
+if __name__ == '__main__':
+    sys.exit(main(sys.argv[1:]))
