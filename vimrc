@@ -50,6 +50,9 @@ set hlsearch
 set foldmethod=marker
 set nofoldenable
 
+" why there is /dev/null in grepprg?
+set grepprg=grep\ -Hn
+
 " Make delition another change -- a life-saver sometimes.
 inoremap <c-u> <c-g>u<c-u>
 inoremap <c-w> <c-g>u<c-w>
@@ -60,6 +63,9 @@ inoremap <CR> <CR><C-G>u
 " Put path of current file into command line easily:
 cabbr <expr> %/ expand('%:p:h')
 cabbr <expr> %. expand('%:p:r')
+
+" Use xdg-open in netrw
+let g:netrw_browsex_viewer = 'xdg-open'
 
 " {{{ Persistent undo -- sophisticated way
 
