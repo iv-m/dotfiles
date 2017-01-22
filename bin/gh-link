@@ -1,0 +1,68 @@
+#!/bin/bash -e
+
+#    Licensed under the Apache License, Version 2.0 (the "License"); you may
+#    not use this file except in compliance with the License. You may obtain
+#    a copy of the License at
+#
+#         http://www.apache.org/licenses/LICENSE-2.0
+#
+#    Unless required by applicable law or agreed to in writing, software
+#    distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+#    WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+#    License for the specific language governing permissions and limitations
+#    under the License.
+
+# From my .vimrc:
+# nmap <Leader>g :echo system("gh-link " . shellescape(expand("%")) . " " . line("."))<CR>
+
+if [ -z "$1" ]; then
+    echo 'Usage: gh-link <file> [<line>]'
+    echo
+    echo 'Make link to github for line <line> in <file>.'
+    echo 'Copies link to clipboard if xclip and $DISPLAY are available'
+    exit 0
+fi
+
+git_dir="$(readlink -f $(git rev-parse --show-toplevel))"
+
+relative_path() {
+    local abs="$(readlink -f $1)"
+    echo "${abs:${#git_dir}}"
+}
+
+repo_name() {
+    git remote -v | perl -lane '
+        if (m,
+            (?:        # remote should refer to github or git.openstack.org:
+                github\.com/
+                | git\@github\.com:
+                | git\.openstack\.org/
+            )
+            ([^\s]+?)  # then repo name (the only capture group)
+            (?:.git)?  # possibly ending with ".git"
+            \s         # and then a space
+            ,x
+        ) {
+            print $1;  # print repo name
+            exit;      # and we are done
+        }'
+}
+
+commit_id="$(git rev-parse HEAD)"
+file="$(relative_path $1)"
+line="$2"
+repo="$(repo_name)"
+
+if [ -z "$repo" ]; then
+    echo "Could not determine repository name" >&2
+    exit 1
+fi
+
+link="https://github.com/$repo/blob/$commit_id$file${line:+#L$line}"
+
+if [ -x `which xclip` 2>/dev/null ] && [ -n "$DISPLAY" ]; then
+    echo -n "$link" | xclip
+    echo "Yanked $link"
+else
+    echo "Link: $link"
+fi
