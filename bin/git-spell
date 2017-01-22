@@ -13,6 +13,9 @@ import os
 import re
 import subprocess
 import sys
+import logging
+
+LOG = logging.getLogger('git-spell')
 
 
 class CommandFailed(RuntimeError):
@@ -102,10 +105,6 @@ class WordStorage(object):
         return set(self._words.keys())
 
     def locations(self, word):
-        locs =  self._words.get(word, ())
-        for l in locs:
-            if any(ord(x) > 127 for x in l.line):
-                print l
         return self._words.get(word, ())
 
     def format(self):
@@ -158,9 +157,10 @@ def iter_lines(commit, path):
         try:
             content = run_command('git', 'show', '%s:%s' % (commit, path))
         except CommandFailed:
+            # mostly, this means path did not exist back there
             return []
     if '\0' in content:
-        print("Ignoring %s: it's probably binary" % path)
+        LOG.warn("Ignoring %s: it's probably binary" % path)
         return []
     return content.splitlines()
 
@@ -181,13 +181,13 @@ def check(older, newer):
     ws = WordStorage()
     names = git_diff_names(older, newer)
     if not names:
-        print('No changes to check spelling')
+        LOG.error('No changes to check spelling')
         return 1
     for name in names:
         try:
             ws.add_lines(name, iter_lines(newer, name))
         except Exception as ex:
-            print("Failed to read %s: %s" % (name, ex))
+            LOG.warn("Failed to read %s: %s" % (name, ex))
 
     for commit_id in list_commit_ids(older, newer):
         message = commit_message(commit_id)
@@ -209,11 +209,13 @@ def check(older, newer):
         return
     wrong_new_words = grep_for(wrong_words, older)
     ws.remember_only(wrong_new_words)
-    print(ws.format())
+    sys.stdout.write(ws.format().encode('utf-8'))
     return 1 if ws else 0
 
 
 def main(args):
+    logging.basicConfig(stream=sys.stderr,
+                        format="%(levelname)s: %(message)s")
     if len(args) == 0:
         older = 'HEAD'
         newer = None
