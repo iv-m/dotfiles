@@ -54,7 +54,7 @@ set nofoldenable
 " why there is /dev/null in grepprg?
 set grepprg=grep\ -Hn
 
-" Make delition another change -- a life-saver sometimes.
+" Make deletion another change -- a life-saver sometimes.
 inoremap <c-u> <c-g>u<c-u>
 inoremap <c-w> <c-g>u<c-w>
 
@@ -170,7 +170,7 @@ nmap <C-c>v :call Tmux_Vars()<CR>
 
 " {{{ Bad whitespace and spelling
 
-" Hilight bad whitespace
+" Highlight bad whitespace
 highlight BadWhitespace ctermbg=black  guibg=black
 autocmd BufNewFile,BufRead *{[^w]?,?[^s]} let b:mtrailingws=matchadd('BadWhitespace', '\s\+$', -1)
 
