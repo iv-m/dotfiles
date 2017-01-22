@@ -59,6 +59,16 @@ def run_command(*args, **kwargs):
     return output[0].decode(encoding)
 
 
+IGNORE_PATTERNS = tuple(re.compile(x) for x in (
+    r'https?://\S+',    # something looks like URL
+    r'ftp//\S+',        # something looks like URL
+    # order matters: from longer to shorter
+    r'[\da-fA-F]{32}'   # 2^5 hexadecimal digits
+    r'[\da-fA-F]{16}',  # 2^4 hexadecimal digits
+    r'[\da-fA-F]{8}',   # 2^3 hexadecimal digits
+    r'#[\da-fA-F]{6}',  # ditto
+    r'#[\da-fA-F]{3}',  # color in hex
+))
 NO_WORD_SYMBOL = re.compile(r'[\W\d_]')
 CAMEL_CASE_BORDER = re.compile(r'([a-z])([A-Z])')
 MIN_LENGTH = 3
@@ -66,6 +76,8 @@ TOPLEVEL_DIR = run_command('git', 'rev-parse', '--show-toplevel').strip()
 
 
 def words_from_line(line):
+    for p in IGNORE_PATTERNS:
+        line = p.sub(' ', line)
     line = NO_WORD_SYMBOL.sub(' ', line)
     line = CAMEL_CASE_BORDER.sub(r'\1 \2', line)
     line = line.lower()
