@@ -35,6 +35,7 @@ colorscheme ron
 hi link Operator Statement
 hi link Label Statement
 hi Title ctermfg=213
+hi htmlItalic cterm=bold
 
 set tabstop=8
 set shiftwidth=4
