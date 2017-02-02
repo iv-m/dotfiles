@@ -31,7 +31,7 @@ sshs () {
 }
 
 vgrep () {
-    vim "+grep $* | copen $((LINES/3))"
+    vim "+grep -R $* | copen $((LINES/3))"
     return $?
 }
 
