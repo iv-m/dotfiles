@@ -117,6 +117,24 @@ autocmd filetype markdown hi link mkdCodeEnd mkdCodeStart
 " c family
 set cinoptions=:0h4i0g0(0W2s
 
+" go
+" disable most of features, since most of my machines don't have Go installed
+let g:go_highlight_functions = 0
+let g:go_highlight_methods = 0
+let g:go_highlight_fields = 0
+let g:go_highlight_types = 0
+let g:go_highlight_extra_types = 0
+let g:go_highlight_trailing_whitespace_error = 0
+let g:go_highlight_operators = 0
+let g:go_highlight_build_constraints = 0
+let g:go_fmt_fail_silently = 1
+let g:go_fmt_autosave = 0
+let g:go_get_update = 0
+let g:go_def_mapping_enabled = 0
+let g:go_echo_go_info = 0
+let g:go_echo_command_info = 0
+
+
 " vimplerator browser temporary files
 autocmd BufNewFile,BufRead  vimperator*.tmp set linebreak nolist wrap
 
@@ -131,6 +149,7 @@ endfunction
 " others
 autocmd filetype html set shiftwidth=2
 autocmd filetype css set shiftwidth=2
+autocmd filetype yaml set shiftwidth=2
 autocmd filetype jade set shiftwidth=2
 " autocmd filetype xml set shiftwidth=2
 autocmd filetype scala set shiftwidth=2
@@ -198,10 +217,10 @@ let g:rbpt_colorpairs = [
     \ ['white',       'White'],
     \ ]
 
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+" au VimEnter * RainbowParenthesesToggle
+" au Syntax * RainbowParenthesesLoadRound
+" au Syntax * RainbowParenthesesLoadSquare
+" au Syntax * RainbowParenthesesLoadBraces
 
 " }}}
 
