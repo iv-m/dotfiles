@@ -10,10 +10,14 @@ set t_Co=256
 set title
 set ruler
 set nowrap
-set nobackup
 set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,cp1251,koi8-r,cp866,default
 set termencoding=utf-8
+
+" backup not needed
+set nobackup
+" swapfiles are just moved to a separate direcory
+set directory=/home/iv/.vimswap//
 
 " these two line disable any bells:
 set visualbell
@@ -146,6 +150,9 @@ function MyAddChangelog()
     execute search('^%changelog') + 2
 endfunction
 
+" terraform
+autocmd BufNewFile,BufRead  *.tf set syntax=conf
+
 " others
 autocmd filetype html set shiftwidth=2
 autocmd filetype css set shiftwidth=2
@@ -228,6 +235,7 @@ let g:rbpt_colorpairs = [
 
 let g:ctrlp_map = '<Leader>e'
 let g:ctrlp_use_caching=0
+let g:ctrlp_regexp = 1
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:15,results:50'
 let g:ctrlp_user_command = {
   \ 'types': {

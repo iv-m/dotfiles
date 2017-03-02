@@ -4,6 +4,7 @@ alias qgit="qgit --all"
 alias grep="grep --color=auto"
 
 export BROWSER=/usr/bin/firefox
+export EDITOR=vim
 export GCC_USE_CCACHE=1
 export CCACHE_COMPRESS=1
 # export GREP_OPTIONS="--color=auto"
@@ -24,6 +25,8 @@ alias gear-hsh='ionice -c idle nice gear-hsh'
 alias gear-rpm='ionice -c idle nice gear-rpm'
 
 export LC_MESSAGES=POSIX
+
+. use_java 1.8
 
 sshs () {
     ssh "$@" -t 'screen -r || screen'
@@ -49,4 +52,3 @@ veem () {
     vim "$file" "+${line}"
     return $?
 }
-
