@@ -2,6 +2,14 @@
 # User specific aliases and functions
 alias qgit="qgit --all"
 alias grep="grep --color=auto"
+alias mc='. /usr/lib/mc/mc-wrapper.sh'
+alias m='. /usr/lib/mc/mc-wrapper.sh -u'
+alias df='df -h'
+alias du='du -h'
+alias gear-hsh='ionice -c idle nice gear-hsh'
+alias gear-rpm='ionice -c idle nice gear-rpm'
+alias use_java=". use_java"
+
 
 export BROWSER=/usr/bin/firefox
 export EDITOR=vim
@@ -16,13 +24,6 @@ export MAVEN_OPTS="-Xmx2048m -XX:MaxPermSize=2048m"
 
 # disable pango in firefox
 export MOZ_DISABLE_PANGO=1
-
-alias mc='. /usr/lib/mc/mc-wrapper.sh'
-alias m='. /usr/lib/mc/mc-wrapper.sh -u'
-alias df='df -h'
-alias du='du -h'
-alias gear-hsh='ionice -c idle nice gear-hsh'
-alias gear-rpm='ionice -c idle nice gear-rpm'
 
 export LC_MESSAGES=POSIX
 

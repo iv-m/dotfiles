@@ -1,9 +1,8 @@
 
-
 JDK_DIR="$HOME/opt/jdk"
 JDK_NAME=$(ls "$JDK_DIR" | grep "${1:-}" | tail -n1)
 
 export JAVA_HOME="$JDK_DIR/$JDK_NAME"
 export PATH="$JAVA_HOME/bin:$(awk -v RS=: -v ORS=: '/jdk/ {next} {print}' <<< "$PATH" | sed 's/:*$//g')"
 
-echo "Selected JDK at $JAVA_HOME"
+[ -z "${PS1:-}" ] || echo "Selected JDK at $JAVA_HOME"
