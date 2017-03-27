@@ -152,6 +152,10 @@ endfunction
 
 " terraform
 autocmd BufNewFile,BufRead  *.tf set syntax=conf
+autocmd BufNewFile,BufRead  *.tfvars set syntax=conf
+
+" consul-template
+autocmd BufNewFile,BufRead  *.ctpl set syntax=goconftmpl
 
 " others
 autocmd filetype html set shiftwidth=2
