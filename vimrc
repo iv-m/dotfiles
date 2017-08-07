@@ -36,8 +36,8 @@ filetype plugin indent on
 syntax on
 
 colorscheme ron
-hi link Operator Statement
-hi link Label Statement
+hi Operator ctermfg=11
+hi Label ctermfg=11
 hi Title ctermfg=213
 hi htmlItalic cterm=bold
 
