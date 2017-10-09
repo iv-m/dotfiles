@@ -1,0 +1,44 @@
+#!/usr/bin/env python2
+#
+# Simple Google Authenticator replacement
+
+import hmac, base64, struct, hashlib, time, os, sys, json
+
+SECRETS_FILE = os.environ.get(
+    'SECRETS_FILE',
+    os.path.expanduser('~/.ssh/otp_secrets.json'))
+
+def get_hotp_token(secret, intervals_no):
+    key = base64.b32decode(secret, True)
+    msg = struct.pack(">Q", intervals_no)
+    h = hmac.new(key, msg, hashlib.sha1).digest()
+    o = ord(h[19]) & 15
+    h = (struct.unpack(">I", h[o:o+4])[0] & 0x7fffffff) % 1000000
+    return h
+
+def get_totp_token(secret):
+    return get_hotp_token(secret, intervals_no=int(time.time())//30)
+
+
+def main(argv):
+    with open(SECRETS_FILE, 'r') as f:
+        secrets = json.load(f)
+    if not argv:
+        print('Known secrets: %s' % ' '.join(secrets.keys()))
+        return 0
+    exit_code = 0
+    for label in argv:
+        try:
+            secret = secrets[label]
+        except KeyError:
+            print('Unknown label: %s' % label)
+        else:
+            print('%s:\t%06d' % (label, get_totp_token(secret)))
+    return exit_code
+
+
+if __name__ == '__main__':
+    try:
+        sys.exit(main(sys.argv[1:]))
+    except Exception, ex:
+        sys.stderr.write("FAILED: %s\n" % ex)
