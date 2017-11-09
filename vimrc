@@ -181,13 +181,13 @@ function! Send_to_Tmux(text)
 endfunction
 
 function! Tmux_Pane_List(A,L,P)
-  let format = "#D: #S:#I.#P #W#{?window_active,*,} #{pane_width}x#{pane_height} #{pane_current_command}"
+  let format = "#D<#S:#I.#P #W #{pane_current_command}>"
   return system("tmux list-panes -a -F " . shellescape(format))
 endfunction
 
 function! Tmux_Vars()
   let pane = input("tmux target: ", "", "custom,Tmux_Pane_List")
-  let g:tmux_target = substitute(pane, ":.*$" , '', 'g')
+  let g:tmux_target = substitute(pane, "<.*$" , '', 'g')
   echo "\ntmux target set to " . g:tmux_target
 endfunction
 
