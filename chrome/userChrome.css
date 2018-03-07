@@ -1,0 +1,15 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); /* set default namespace to XUL */
+
+textarea, input, select {
+  -moz-appearance: none !important;
+  background-color: #FFFFFF !important;
+  color: #000000 !important;
+}
+
+#TabsToolbar {
+  visibility: collapse !important;
+}
+
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header {
+  display: none;
+}
