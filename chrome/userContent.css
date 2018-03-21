@@ -1,5 +1,5 @@
 
-textarea, input[type=text], input[type=password], input[type=search], input[type=email], input[type=number], select {
+textarea, input:not([type]), input[type=text], input[type=password], input[type=search], input[type=email], input[type=number], select {
   -moz-appearance: none !important;
   background-color: #FFF;
   color: #000;
