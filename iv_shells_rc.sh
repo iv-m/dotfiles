@@ -15,15 +15,9 @@ export BROWSER=/usr/bin/firefox
 export EDITOR=vim
 export GCC_USE_CCACHE=1
 export CCACHE_COMPRESS=1
-# export GREP_OPTIONS="--color=auto"
 export MYSQL_PS1="$(hostname -s) \h/\d> "
 export PYTHONSTARTUP="$HOME/.pythonrc.py"
-export SPLUNK_TOOL_CONFIG="$HOME/.ssh/splunk.json"
 export MAVEN_OPTS="-Xmx2048m -XX:MaxPermSize=2048m"
-# export PATH=$PATH:/home/iv/opt/android-sdk-linux_x86/platform-tools/
-
-# disable pango in firefox
-export MOZ_DISABLE_PANGO=1
 
 export LC_MESSAGES=POSIX
 
