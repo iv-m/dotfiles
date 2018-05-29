@@ -1,0 +1,73 @@
+XLock.mode: blank
+XLock.allowaccess: off
+XLock.debug: off
+XLock.description: on
+XLock.echokeys: off
+XLock.echokey: ?
+XLock.enablesaver: off
+XLock.resetsaver: on
+XLock.grabmouse: on
+XLock.grabserver: off
+XLock.hide: on
+XLock.install: on
+XLock.mousemotion: off
+XLock.mono: off
+XLock.sound: off
+XLock.showfps: off
+XLock.fpstop: on
+XLock.fpsfont: -*-droid sans-medium-r-*-*-24-*-*-*-*-*-*
+XLock.showdate: on
+XLock.timeelapsed: off
+XLock.usefirst: on
+XLock.verbose: off
+XLock.visual: 
+XLock.nice: 10
+XLock.lockdelay: 0
+XLock.unlockdelay: 0
+XLock.timeout: 30
+XLock.font: -*-droid sans-medium-r-*-*-24-*-*-*-*-*-*
+XLock.planfont: -*-droid sans mono-medium-r-*-*-14-*-*-*-*-*-*-*
+XLock.fontset: -*-droid sans-medium-r-*-*-24-*-*-*-*-*-*,-*-*-medium-r-normal--24-*
+XLock.planfontset: -*-droid sans mono-medium-r-*-*-14-*-*-*-*-*-*-*,-*-*-medium-r-normal--14-*
+XLock.background: Black
+XLock.foreground: White
+XLock.username: Name: 
+XLock.password: Password: 
+XLock.info: Enter password to unlock; select icon to lock.
+XLock.validate: Validating login...
+XLock.invalid: Invalid login.
+XLock.invalidCapsLock: Invalid login, Caps Lock on.
+XLock.attempt: %d failed attempt.
+XLock.attempts: %d failed attempts.
+XLock.geometry: 
+XLock.icongeometry: 
+XLock.wireframe: off
+XLock.use3d: off
+XLock.delta3d: 1.5
+XLock.none3d: Black
+XLock.right3d: Blue
+XLock.left3d: Red
+XLock.both3d: Magenta
+XLock.program: fortune -s
+XLock.messagesfile: 
+XLock.messagefile: 
+XLock.message: 
+XLock.messagefont: -*-droid serif-*-*-*-*-18-*-*-*-*-*-*-*
+XLock.logoutButton: -1
+XLock.logoutButtonLabel: Logout
+XLock.logoutButtonHelp: Click here to logout
+XLock.logoutFailedString: Auto-logout failed
+XLock.enablekbdmon: off
+XLock.kbdmonLabel: Keyboard state: 
+XLock.startCmd: xset dpms force off
+XLock.endCmd: 
+XLock.pipepassCmd: 
+XLock.logoutCmd: 
+XLock.nologout: off
+XLock.dpmsstandby: -1
+XLock.dpmssuspend: -1
+XLock.dpmsoff: -1
+XLock.mailCmd: 
+XLock.mailIcon: 
+XLock.nomailIcon: 
+XLock.vtlock: off
