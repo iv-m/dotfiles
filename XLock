@@ -57,7 +57,7 @@ XLock.logoutButton: -1
 XLock.logoutButtonLabel: Logout
 XLock.logoutButtonHelp: Click here to logout
 XLock.logoutFailedString: Auto-logout failed
-XLock.enablekbdmon: off
+XLock.enablekbdmon: on
 XLock.kbdmonLabel: Keyboard state: 
 XLock.startCmd: xset dpms force off
 XLock.endCmd: 
