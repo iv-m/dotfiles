@@ -21,7 +21,7 @@ export MAVEN_OPTS="-Xmx2048m -XX:MaxPermSize=2048m"
 
 export LC_MESSAGES=POSIX
 
-. use_java 1.8
+# . use_java 1.8
 
 sshs () {
     ssh "$@" -t 'screen -r || screen'
