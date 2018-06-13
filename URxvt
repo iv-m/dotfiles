@@ -15,8 +15,8 @@ URxvt.jumpScroll: true
 URxvt.skipScroll: true
 URxvt.inheritPixmap: false
 URxvt.internalBorder: 0
-//URxvt.tintColor: white
-//URxvt.shading: 50
+URxvt*transparent: true
+URxvt*shading: 10
 URxvt.perl-ext:
 URxvt.perl-ext-common:
 URxvt.url-launcher: /usr/bin/firefox

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+urxvt -tr -geometry 144x42 -e tmux att
