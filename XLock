@@ -25,10 +25,10 @@ XLock.nice: 10
 XLock.lockdelay: 0
 XLock.unlockdelay: 0
 XLock.timeout: 30
-XLock.font: -*-droid sans-medium-r-*-*-24-*-*-*-*-*-*
-XLock.planfont: -*-droid sans mono-medium-r-*-*-14-*-*-*-*-*-*-*
-XLock.fontset: -*-droid sans-medium-r-*-*-24-*-*-*-*-*-*,-*-*-medium-r-normal--24-*
-XLock.planfontset: -*-droid sans mono-medium-r-*-*-14-*-*-*-*-*-*-*,-*-*-medium-r-normal--14-*
+XLock.font: -*-terminus-bold-*-normal--24-*-,-*-*-bold-*-normal--14-*-,-*-*-medium-*-normal--14-*-
+XLock.planfont: -*-terminus-bold-*-normal--12-*-,-*-*-bold-*-normal--12-*-
+XLock.fontset: -*-terminus-bold-*-normal--24-*-,-*-*-bold-*-normal--14-*-,-*-*-medium-*-normal--14-*-
+XLock.planfontset: -*-terminus-bold-*-normal--12-*-,-*-*-bold-*-normal--12-*-
 XLock.background: Black
 XLock.foreground: White
 XLock.username: Name: 
