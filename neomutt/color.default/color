@@ -1,0 +1,6 @@
+# colorize the message body:
+source	~/.neomutt/color.`~/.neomutt/color-select`/body
+# colorize the message header:
+source	~/.neomutt/color.`~/.neomutt/color-select`/header
+# colorize the folder index:
+source	~/.neomutt/color.`~/.neomutt/color-select`/index

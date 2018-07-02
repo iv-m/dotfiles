@@ -1,0 +1,29 @@
+# Note: $folder should be set _before_ any other path vars where `+' or `='
+# is used because paths are expanded when parsed
+set	alias_file=~/.neomutt/alias
+
+set	edit_headers
+set	editor="vim -c 'set ft=mail tw=74' '+/^$'"
+
+set	ignore_list_reply_to
+set	index_format="%4C %Z %{%b %d} %-31.31F (%4l) %s"
+
+set	menu_scroll
+set	mime_forward=ask-no
+# set	mbox=+mbox
+# 
+# set	postponed=+postponed-msgs
+# 
+# set	record=+sent-mail
+
+set	nosave_empty
+set	sort=threads
+
+set	nouser_agent
+
+set	pager_stop=yes
+set	help=no
+
+set	mark_old=no
+
+set	quote_regex="^([ \t]*[|>:}])+"

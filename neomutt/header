@@ -1,0 +1,3 @@
+hdr_order	date from to cc bcc subject
+ignore		*
+unignore	Date From: To Cc Bcc Subject

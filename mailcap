@@ -1,0 +1,6 @@
+text/x-diff; cat ; copiousoutput
+text/x-patch; cat ; copiousoutput
+application/x-gzip; zcat ; copiousoutput
+application/pgp; cat; copiousoutput
+application/pgp-keys; pgp -f < %s ; copiousoutput
+application/pgp-signature; cat ; copiousoutput

@@ -1,0 +1,3 @@
+#	pager
+bind pager <BackSpace> previous-line
+bind pager <Delete> previous-line

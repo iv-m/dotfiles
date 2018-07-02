@@ -1,0 +1,124 @@
+color	hdrdefault	color75	default
+
+## =============================================================
+## COLOR for Valid Mails
+## =============================================================
+
+#	Most important lines
+color	header	brightcyan	default	"^date: "
+color	header	brightcolor75	default	"^from:? "
+color	header	brightcolor78	default	"^to:? "
+color	header	brightcolor80	default	"^cc:? "
+color	header	brightcolor116	default	"^bcc:? "
+color	header	brightcolor160	default	"^subject: "
+#color	header	brightcyan	default	"^subject: "
+#color	header	brightcyan	default	"^from:? "
+#color	header	brightcyan	default	"^to:? "
+#color	header	brightcyan	default	"^cc:? "
+#color	header	brightcyan	default	"^bcc:? "
+#color	header	brightcyan	default	"^date: "
+
+#	"Delivered-To:" header
+#color	header	yellow	default	"^Delivered-To: "
+
+#	Info relating to the sender:
+#color	header	green	default	"^sender: "
+#color	header	green	default	"^organi[sz]ation: "
+#color	header	green	default	"x-editor: "
+#color	header	green	default	"(x-mailer|user-agent): "
+#color	header	green	default	"X-Operating-System: "
+#color	header	green	default	"X-MimeOLE: "
+#color	header	green	default	"X-Accept-Language: "
+
+#  Message Identification.
+#  Message-ID, In-Reply-To, and References:
+#  color header       red      default	"^message-id:"
+#  color header       red      default	"^in-reply-to: "
+#  color header       red      default	"^references: "
+
+##  Public Messages (related to MailLists or News/Usenet):
+#   color header       white    red      "^newsgroups: "
+
+#  Redirection.
+#   color header cyan    default    "^followup-to: "
+#   color header cyan    default    "^mail-followup-to: "
+#   color header cyan    default    "^reply-to: "
+
+##  Importance:, Precedence: Priority:
+##  Color depends on the value:
+#   color header       green	default    "^importance: "
+#   color header       green	default    "^importance: normal"
+#   color header       green	default    "^precedence: "
+#   color header       green	default    "^priority: "
+#   color header       green	default    "^priority: normal"
+#   color header       red	default    "^priority: (high|urgent)"
+##color	header	default	black	"x-priority: "
+##color	header	default	black	"X-MSMail-Priority: "
+#
+##  Address lines (To:, Cc:, Reply-To; Bcc:):
+##  Empty address lines get special color:
+##  BUG:  Anchoring at the end-of-line with '$' does not work!  :-(
+##  color header white          magenta  "bcc: $"
+##  color header white          magenta  "cc: $"
+##  color header white          magenta  "to: ?$"
+##  color header white          magenta  "to: $"
+##  color header white          magenta  "to:$"
+##  color header white          magenta  "to: "
+#color	header	green	magenta	"^to: *\\$"
+##
+##  Require at least one non-space character
+##  to differentiate from following rules.
+##color	header	brightyellow	red	"bcc: [^ ]"
+##color	header	yellow	black	"cc: [^ ]"
+##color	header	brightyellow	black	"^to: [^ ]"
+#
+##  Lines that get added by the MDA:
+##color	header	default	black	"Content-Length: "
+##color	header	default	black	"Lines: "
+#
+##  Standard Headers that are usually hidden:
+#color	header	white	default	"Received: "
+#color	header	white	default	"Return-Path: "
+#
+##  Other additional headers:
+##  Netscape Mozilla adds this:      "X-Accept-Language: en"
+##color	header	default	black	"X-Accept-Language: "
+#
+##  The "Status" as added by elm, mutt, and pine:
+#color	header	blue	white	"Status: "
+#
+##  MIME headers:
+#   color header   default   yellow     "MIME-Version: "
+#   color header   default   yellow     "Content-Type: "
+#   color header   default   yellow     "Content-Transfer-Encoding: "
+#   color header   default   yellow     "Content-Disposition: "
+#   color header   default   yellow     "Content-Encoding: "
+#   color header   default   yellow     "Content-Language: "
+#
+##  Deflected ("Resent") Mails:
+#   color header   yellow default     "X-Resent-By: "
+#   color header   yellow default     "X-Resent-For: "
+#   color header   yellow default     "X-Resent-To: "
+#
+# TODO:
+# Content-MD5:
+# Errors-To:
+# Status: RO
+# X-Originating-IP: 
+# X-Pgp-Fingerprint:
+# X-Sun-Charset: US-ASCII
+# X-Keywords:
+# X-UID: 17
+# X-Status: F
+
+## =============================================================
+## COLOR for SPAM - magenta on default
+## =============================================================
+
+#	"To: <Undisclosed Recipients>" - SPAM or proper MailList?
+color	header	magenta	default	"To: <Undisclosed Recipients>"
+
+#	Bad To and Reply-To lines (without '@' sign):
+color	header	magenta	default	"(Reply-)?To: [^@]*\\$"
+
+# EOF

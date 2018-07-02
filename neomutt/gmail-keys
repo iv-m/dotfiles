@@ -1,0 +1,7 @@
+
+bind editor <space> noop
+macro index,pager d "<save-message>=[Gmail]/All Mail<enter><enter>" "Archive"
+# macro index gi "<change-folder>=INBOX<enter>" "Go to inbox"
+# macro index ga "<change-folder>=[Gmail]/All Mail<enter>" "Go to all mail"
+# macro index gd "<change-folder>=[Gmail]/Drafts<enter>" "Go to drafts"
+bind index,pager G imap-fetch-mail

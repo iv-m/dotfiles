@@ -1,0 +1,132 @@
+## ==================================================
+## COLOR for both the Folder INDEX *and* the PAGER
+## ==================================================
+
+#	error messages
+color	error	red	default
+
+#  "message" - informational messages
+#  such as the incremental count at startup.
+#  It is nice to see on startup that
+#  color actually works.  :-)
+color	message	brightwhite	blue
+
+## ==================================================
+## Special COLORs for the Folder INDEX
+## ==================================================
+
+#  The  "indicator" for the "current message" -
+#  whether it is an arrow or an "inverse line":
+color	indicator	brightwhite	green
+
+#        "status" lines in the folder index.
+#        used for the mini-help line.
+color	status	black	white
+
+#  The  "tree" display of threads within the folder index.
+color	tree	blue	default
+
+## ==================================================
+## COLOR for some special messages.
+## ==================================================
+
+## ==================================================
+## Mails TO   special addresses
+## ==================================================
+
+#  Mails with no obvious addresses
+#  (empty To: and Cc: lines)
+color	index	magenta	default	"! ~C ."
+
+#  An empty Message-ID usually is spam, too.
+   color index magenta default "~i <>"
+#
+#  Message-IDs do not contain spaces.
+   color index magenta default "~i '<.* .*>'"
+#
+#  Message-IDs should not contain "localhost".
+#  color index magenta default "~i localhost"
+#
+#  Message-IDs contains at least one '@' character.
+   color index magenta default "! ~i @"
+#
+#  Address lines contain only local addresses
+#  ie without an '@' character.
+   color index magenta default "! ~C @"
+
+#  Possible SPAM:
+#  color index magenta      default  '! ~p ~f @(aol\|hotmail\|msn\|prodigy\|yahoo)\.(com'
+#  color index magenta      default '~f @(aol\|hotmail\|msn\|prodigy\|yahoo)\.(com\|net)'
+#  color index magenta      default  '! ~p ~f @compulink.nlrs.com'
+#  color index magenta      default  '! ~p ~f free'
+#  color index magenta      default  '! ~p ~f funtime'
+#  color index magenta      default  '! ~p ~f worldnet.att.net'
+   color index magenta      default  '~C Undisclosed.*Recipients'
+
+#  Show mails with "References" lines in the header.
+#  This uses a rainbow scheme - the darker the color,
+#  the more entries in the References line.
+#
+#  color index brightyellow default  "~h 'References: +<.+>'"
+#  color index yellow       default  "~h 'References: +<.+> +<.+>'"
+#  color index brightred    default  "~h 'References: +<.+> +<.+> +<.+>'"
+#  color index red          default  "~h 'References: +<.+> +<.+> +<.+> +<.+>'"
+#  color index blue         default  "~h 'References: +<.+> +<.+> +<.+> +<.+> +<.+>'"
+#  color index green        default  "~h 'References: +<.+> +<.+> +<.+> +<.+> +<.+> +<.+>'"
+
+# Replies to my mails - indicated by an "in-reply-to" line
+# including my local domain.
+# color index brightyellow default   "~h 'in-reply-to: .*math.fu-berlin.de'"
+# color index brightyellow default   "~h 'references: .*math.fu-berlin.de'"
+
+#  Flagged Messages are important!
+#   color index brightred   black "~F"
+#  I use the flag to indicate that
+#  I should reply to these soon.
+
+#  mail from myself *and* to myself (TODO items):
+#color	index	yellow	default	'~f ldv ~p'
+
+#  the pattern "~p" means "from myself" - but alas
+#  there is no pattern for "*from* myself"  :-(
+
+#  mail to myself (personal mail):
+#  color index brightgreen        black  '~p'
+#  Commented out as most mail is for me - except SPAM.
+
+#  mail NOT to myself (unpersonal mail):
+#  color index green        black  '! ~p'
+
+#  "DONE mails" ie those I have already replied to.
+color	index	green	default	'~Q'
+
+#  MailList - these messages have been sent to
+#  a known mailing list.  What do these do in my mailbox??
+#   color index white        blue   '~l'
+
+#  Deleted Mails - use dark color
+#  as these are already "dealt with".
+color	index	yellow	default	"~D"
+
+## ==================================================
+## Mails FROM special addresses
+## ==================================================
+#  mail from important people (like myself ;-):
+#   color index cyan         black  '~f guckes'
+#   color index white        red    '~f (ute.*fuchs)@'
+#
+#  The author of Vim - Bram Moolenaar:
+#  color index brightred    black   "~f bram"
+
+# ======================
+# PAGER stuff
+# ======================
+#       "search" - matches found with search
+#        within the internal pager.
+color	search	white	blue
+
+#  The  "markers" indicate a wrapped line
+#  when showing messages with looong lines.
+color	markers	white	yellow
+
+#EOF  vim: tw=999

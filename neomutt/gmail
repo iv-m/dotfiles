@@ -1,0 +1,33 @@
+set from = "iv@altlinux.org"
+set realname = "Ivan A. Melnikov"
+set folder = "imaps://imap.gmail.com:993"
+set spoolfile = "+INBOX"
+set postponed ="+[Gmail]/Drafts"
+set header_cache =~/.neomutt/cache/headers
+set message_cachedir =~/.neomutt/cache/bodies
+set certificate_file =~/.neomutt/certificates
+set smtp_url = "smtp://ivan.a.melnikov@smtp.gmail.com:587/"
+set move = no 
+set imap_keepalive = 900
+
+set timeout=10
+
+mailboxes = +INBOX \
++ALTLinux \
++ALTLinux/BuildBots \
++ALTLinux/Cybertalk \
++ALTLinux/Devel \
++ALTLinux/Distro \
++ALTLinux/Ports \
++BaseAlt \
++BaseAlt/Recycler \
++BaseAlt/Redmine \
++BaseAlt/Robots \
++Bugz \
++GitHub \
++Kerberos \
++Promo \
++Samba \
++Saratov \
++Security
+

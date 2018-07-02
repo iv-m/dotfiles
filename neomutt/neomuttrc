@@ -1,0 +1,16 @@
+source	~/.neomutt/set
+source	~/.neomutt/alias
+source	~/.neomutt/bind
+source	~/.neomutt/charset
+source	~/.neomutt/header
+source	~/.neomutt/folder
+source	~/.neomutt/gpg
+source	~/.neomutt/lists
+source	~/.neomutt/color
+source	~/.neomutt/auto_views
+
+source	~/.neomutt/sidebar
+
+source	~/.neomutt/gmail
+source	~/.neomutt/gmail-priv
+source	~/.neomutt/gmail-keys

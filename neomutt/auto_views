@@ -1,0 +1,5 @@
+auto_view text/x-patch
+auto_view text/x-diff
+auto_view application/pgp-signature
+auto_view application/pgp
+auto_view application/x-gzip
