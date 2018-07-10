@@ -1,8 +1,10 @@
-#set	pgp_autosign
-#set	pgp_replysign
-set	pgp_replyencrypt
-set	pgp_replysignencrypted
-#set	pgp_sign_as=0x25484EBB
+set	pgp_autosign=yes
+set	pgp_replysign=yes
+set	pgp_replyencrypt=yes
+set	pgp_replysignencrypted=yes
+
+set	pgp_use_gpg_agent=yes
+set	pgp_sign_as=2A82451F
 #set	pgp_sign_micalg=pgp-sha1
 
 #	decode application/pgp
@@ -15,7 +17,9 @@ set	pgp_verify_command="gpg -q --batch --no-verbose -o - --no-tty --verify %s %f
 set	pgp_decrypt_command="gpg --passphrase-fd 0 -q --batch --output - --no-tty %f"
 
 # create a pgp/mime signed attachment
-set	pgp_sign_command="gpg -q --batch --output - --no-tty --passphrase-fd 0 --armor --detach-sign --textmode %?a?-u %a? %f"
+set	pgp_sign_command="gpg2 -q --batch --output - --no-tty --passphrase-fd 0 --armor --detach-sign --textmode %?a?-u %a? %f"
+# set	pgp_sign_command="/usr/bin/gpg2 --batch --output - --armor --detach-sign --use-agent --no-secmem-warning %?a?-u %a? %f"
+
 
 # create a application/pgp signed (old-style) message
 set	pgp_clearsign_command="gpg -q --batch --output - --no-tty --passphrase-fd 0 --armor --textmode --clearsign %?a?-u %a? %f"
@@ -40,5 +44,4 @@ set	pgp_list_pubring_command="gpg -q --batch --output - --no-tty --with-colons -
 
 # read in the secret key ring
 set	pgp_list_secring_command="gpg -q --batch --output - --no-tty --with-colons --list-secret-keys %r"
-
 

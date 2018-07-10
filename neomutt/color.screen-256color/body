@@ -143,3 +143,14 @@ color	body	color177	default	"(^| +)#[0-9]+"
 #  IP Host Adresses:
 #  192.x.x.x
 #  color body white        blue  "192.[0-9]{0,3}.[0-9]{0,3}.[0-9]{0,3}"
+#
+
+# diff-like stuff
+color body cyan default "^diff \-.*"
+color body cyan default "^index [a-f0-9].*"
+color body cyan default "^\-\-\- .*"
+color body cyan default "^[\+]{3} .*"
+color body color78 default "^[\+][^\+]+.*"
+color body color210  default "^\-[^\-]+.*"
+color body color153  default "^[*][^*]+.*"
+color body brightwhite default "^@@ .*"

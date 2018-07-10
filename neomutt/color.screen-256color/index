@@ -17,7 +17,7 @@ color	message	brightwhite	blue
 
 #  The  "indicator" for the "current message" -
 #  whether it is an arrow or an "inverse line":
-color	indicator	brightwhite	green
+color	indicator	brightwhite	color22
 
 #        "status" lines in the folder index.
 #        used for the mini-help line.
