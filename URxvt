@@ -49,3 +49,4 @@ URxvt*keysym.M-C-4: command:\033]50;-xos4-terminus-medium-r-normal-*-24-*-*-*-*-
 URxvt*keysym.M-C-5: command:\033]50;-xos4-terminus-medium-r-normal-*-28-*-*-*-*-iso10646-1,xft:WenQuanYi Micro Hei Mono:style=Regular:pixelsize=28:antialias=true\007
 URxvt*keysym.M-C-6: command:\033]50;-xos4-terminus-medium-r-normal-*-32-*-*-*-*-iso10646-1,xft:WenQuanYi Micro Hei Mono:style=Regular:pixelsize=32:antialias=true\007
 // URxvt*keysym.M-C-4: command:\033]50;-xos4-terminus-medium-r-normal-*-20-*-*-*-*-iso10646-1\007\033[8;38;128t
+URxvt.cutchars: `""''&()*,;<=>?@[]^{|}:#
