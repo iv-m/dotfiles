@@ -6,3 +6,4 @@ application/x-gzip; zcat ; copiousoutput
 application/pgp; cat; copiousoutput
 application/pgp-keys; pgp -f < %s ; copiousoutput
 application/pgp-signature; cat ; copiousoutput
+text/html; elinks -dump %s ; copiousoutput
