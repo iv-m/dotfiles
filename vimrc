@@ -17,7 +17,7 @@ set termencoding=utf-8
 " backup not needed
 set nobackup
 " swapfiles are just moved to a separate direcory
-set directory=/home/iv/.vimswap//
+set directory=/crypt/iv/.vimswap//
 
 " these two line disable any bells:
 set visualbell
@@ -34,6 +34,8 @@ set history=200
 
 filetype plugin indent on
 syntax on
+
+set listchars=tab:»→,space:·,eol:$
 
 colorscheme ron
 hi Operator ctermfg=11
@@ -77,7 +79,7 @@ let g:netrw_browsex_viewer = 'xdg-open'
 au BufReadPost * call ReadUndo()
 au BufWritePost * call WriteUndo()
 func MyUndoFile()
-    return '/home/iv/.vimundo/' . substitute(expand('%:p'), '/', '__', 'g')
+    return '/crypt/iv/.vimundo/' . substitute(expand('%:p'), '/', '__', 'g')
 endfunc
 
 func ReadUndo()
@@ -259,3 +261,4 @@ command -nargs=? -complete=dir Ctags ! ctags -R --c++-kinds=+p --fields=+iaS --e
 command -nargs=+ Ggrep cexpr system("git grep -nH " . shellescape(<q-args>))
 
 " }}}
+
