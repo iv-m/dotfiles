@@ -21,7 +21,7 @@
 ## ==================================================
 
 #	Show  attachments:
-color	attachment	brightcyan	default
+color	attachment	cyan	default
 
 #	Quoted text - coloring only the first four levels:
 color	quoted	color75	default

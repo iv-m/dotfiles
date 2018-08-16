@@ -21,7 +21,10 @@ color	indicator	brightwhite	color22
 
 #        "status" lines in the folder index.
 #        used for the mini-help line.
-color	status	black	white
+color	status	black	color245
+
+# same color for sidebar divider
+color	sidebar_divider	black	color245
 
 #  The  "tree" display of threads within the folder index.
 color	tree	blue	default

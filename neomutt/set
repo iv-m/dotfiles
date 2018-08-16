@@ -31,3 +31,5 @@ set	pager_index_lines=10
 
 # save replies to the current folder
 folder-hook . 'set record="^"'
+# but don't
+set copy=no
