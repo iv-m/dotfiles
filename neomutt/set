@@ -33,3 +33,5 @@ set	pager_index_lines=10
 folder-hook . 'set record="^"'
 # but don't
 set copy=no
+
+set	rfc2047_parameters=yes
