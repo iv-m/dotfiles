@@ -17,7 +17,10 @@ set	mime_forward=ask-no
 # set	record=+sent-mail
 
 set	nosave_empty
-set	sort=threads
+set	strict_threads # Don’t thread messages by Subject
+set	sort=threads # Sort messages into threads
+set	sort_aux=last-date-received # Order threads by most recent message
+
 
 set	nouser_agent
 
