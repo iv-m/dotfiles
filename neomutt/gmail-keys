@@ -1,7 +1,5 @@
 
 bind editor <space> noop
-macro index,pager d "<save-message>=[Gmail]/All Mail<enter><enter>" "Archive"
-macro index,pager "\`i" "<change-folder>=INBOX<enter>" "Go to inbox"
 macro index,pager "\`a" "<change-folder>=BaseAlt<enter>" "Go to BaseAlt"
 macro index,pager "\`b" "<change-folder>=ALTLinux/BuildBots<enter>" "Go to BuildBots"
 macro index,pager "\`r" "<change-folder>=BaseAlt/Recycler<enter>" "Go to Recycler"
