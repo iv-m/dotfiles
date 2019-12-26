@@ -10,23 +10,29 @@ set smtp_url = "smtp://ivan.a.melnikov@smtp.gmail.com:587/"
 set move = no 
 set imap_keepalive = 900
 
-set timeout=10
+unset imap_passive
+set mail_check=90
+set timeout=5
 
-mailboxes = +INBOX \
+mailboxes = +/ \
 +ALTLinux \
 +ALTLinux/BuildBots \
 +ALTLinux/Cybertalk \
 +ALTLinux/Devel \
 +ALTLinux/Distro \
++ALTLinux/P9 \
 +ALTLinux/Ports \
++ALTLinux/SBC \
++ALTLinux/Sisyphus \
++ALTLinux/Wiki \
 +BaseAlt \
 +BaseAlt/Recycler \
 +BaseAlt/Redmine \
 +BaseAlt/Robots \
++BaseAlt/Talk \
 +Bugz \
 +GitHub \
 +Kerberos \
-+Promo \
 +Samba \
 +Saratov \
 +Security

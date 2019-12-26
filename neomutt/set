@@ -24,17 +24,28 @@ set	sort_aux=last-date-received # Order threads by most recent message
 
 set	nouser_agent
 
-set	pager_stop=yes
 set	help=no
+set	pager_stop=yes
+set	pager_context=3
+set	pager_index_lines=10
 
 set	mark_old=no
 
 set	quote_regex="^([ \t]*[|>:}])+"
-set	pager_index_lines=10
+
+# defaults are ok when replying
+set	fast_reply=yes
+set	include=yes
+
 
 # save replies to the current folder
 folder-hook . 'set record="^"'
 # but don't
 set copy=no
 
+# collpase threads by default
+folder-hook . "exec collapse-all"
+
 set	rfc2047_parameters=yes
+
+set	sleep_time=0
