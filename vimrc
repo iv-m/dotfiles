@@ -16,8 +16,9 @@ set termencoding=utf-8
 
 " backup not needed
 set nobackup
+set nowritebackup
 " swapfiles are just moved to a separate direcory
-set directory=/crypt/iv/.vimswap//
+set directory=/crypt/iv/.vimswap/
 
 " these two line disable any bells:
 set visualbell
