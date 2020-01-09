@@ -24,7 +24,8 @@ phones_off () {
 }
 
 phones_def () {
-    pactl set-default-sink bluez_sink.34_C7_31_FD_BD_14
+    pactl set-default-sink bluez_sink.34_C7_31_FD_BD_14.a2dp_sink \
+        || pactl set-default-sink bluez_sink.34_C7_31_FD_BD_14
 }
 
 set -exu
