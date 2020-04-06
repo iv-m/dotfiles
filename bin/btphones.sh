@@ -1,9 +1,9 @@
 #!/bin/bash
 
-
 phones_on () {
-    #sudo rfkill unblock bluetooth
+    /usr/sbin/rfkill unblock bluetooth ||:
     #sudo hciconfig hci0 up
+    sleep 1s
     (
         # echo "power off"
         # sleep 1s
@@ -39,7 +39,10 @@ case "$COMMAND" in
     dmesg)
         dmesg | grep -i bluetooth
         ;;
-    default)
+    block)
+        /usr/sbin/rfkill block bluetooth
+        ;;
+    *)
         echo "Unknown command: $COMMAND" >&2
         exit 13
 esac
