@@ -99,7 +99,7 @@ endfunc
 
 " python
 let python_highlight_all = 1
-autocmd filetype python set makeprg=pep8\ --repeat\ --ignore=W391,E201\ %
+" autocmd filetype python set makeprg=pep8\ --repeat\ --ignore=W391,E201\ %
 " uncomment if you don't have my awesome indent plugin:
 " autocmd filetype python set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 
