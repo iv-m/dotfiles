@@ -6,6 +6,7 @@ if [ -r /etc/bashrc ]; then
 fi
 
 shopt -s histappend
+shopt -s direxpand
 export HISTCONTROL=ignoreboth:erasedups
 export HISTFILESIZE=999999
 export HISTSIZE=999999
