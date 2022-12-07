@@ -1,9 +1,9 @@
 
 
 URxvt.font:  -xos4-terminus-medium-r-normal-*-14-*-*-*-*-iso10646-1,xft:WenQuanYi Micro Hei Mono:style=Regular:pixelsize=14:antialias=true
-URxvt.depth: 32
-//URxvt.background: rgba:3000/1800/0000/e700
-// URxvt.geometry: 100x40
+// URxvt.depth: 32
+// URxvt.background: rgba:3000/1800/0000/e700
+URxvt.geometry: 120x42
 URxvt.foreground: white
 //URxvt.foreground: black
 URxvt.fading: 22
@@ -15,9 +15,9 @@ URxvt.jumpScroll: true
 URxvt.skipScroll: true
 URxvt.inheritPixmap: false
 URxvt.internalBorder: 0
-URxvt*transparent: true
-URxvt*shading: 10
-URxvt.perl-ext:
+URxvt.transparent: true
+URxvt.shading: 17
+URxvt.perl-ext: background
 URxvt.perl-ext-common:
 URxvt.url-launcher: /usr/bin/firefox
 URxvt.matcher.button: 1
@@ -40,13 +40,13 @@ URxvt.urgentOnBell: true
 // URxvt*keysym.S-F2: \033O2Q
 // URxvt*keysym.S-F3: \033O2R
 // URxvt*keysym.S-F4: \033O2S
-URxvt*keysym.C-Page_Up: \033[5;5~
-URxvt*keysym.C-Page_Down: \033[6;6~
-URxvt*keysym.M-C-1: command:\033]50;-xos4-terminus-medium-r-normal-*-12-*-*-*-*-iso10646-1,xft:WenQuanYi Micro Hei Mono:style=Regular:pixelsize=12:antialias=true\007
-URxvt*keysym.M-C-2: command:\033]50;-xos4-terminus-medium-r-normal-*-14-*-*-*-*-iso10646-1,xft:WenQuanYi Micro Hei Mono:style=Regular:pixelsize=14:antialias=true\007
-URxvt*keysym.M-C-3: command:\033]50;-xos4-terminus-medium-r-normal-*-20-*-*-*-*-iso10646-1,xft:WenQuanYi Micro Hei Mono:style=Regular:pixelsize=20:antialias=true\007
-URxvt*keysym.M-C-4: command:\033]50;-xos4-terminus-medium-r-normal-*-24-*-*-*-*-iso10646-1,xft:WenQuanYi Micro Hei Mono:style=Regular:pixelsize=24:antialias=true\007
-URxvt*keysym.M-C-5: command:\033]50;-xos4-terminus-medium-r-normal-*-28-*-*-*-*-iso10646-1,xft:WenQuanYi Micro Hei Mono:style=Regular:pixelsize=28:antialias=true\007
-URxvt*keysym.M-C-6: command:\033]50;-xos4-terminus-medium-r-normal-*-32-*-*-*-*-iso10646-1,xft:WenQuanYi Micro Hei Mono:style=Regular:pixelsize=32:antialias=true\007
+URxvt.keysym.C-Page_Up: \033[5;5~
+URxvt.keysym.C-Page_Down: \033[6;6~
+URxvt.keysym.M-C-1: command:\033]50;-xos4-terminus-medium-r-normal-*-12-*-*-*-*-iso10646-1,xft:WenQuanYi Micro Hei Mono:style=Regular:pixelsize=12:antialias=true\007
+URxvt.keysym.M-C-2: command:\033]50;-xos4-terminus-medium-r-normal-*-14-*-*-*-*-iso10646-1,xft:WenQuanYi Micro Hei Mono:style=Regular:pixelsize=14:antialias=true\007
+URxvt.keysym.M-C-3: command:\033]50;-xos4-terminus-medium-r-normal-*-20-*-*-*-*-iso10646-1,xft:WenQuanYi Micro Hei Mono:style=Regular:pixelsize=20:antialias=true\007
+URxvt.keysym.M-C-4: command:\033]50;-xos4-terminus-medium-r-normal-*-24-*-*-*-*-iso10646-1,xft:WenQuanYi Micro Hei Mono:style=Regular:pixelsize=24:antialias=true\007
+URxvt.keysym.M-C-5: command:\033]50;-xos4-terminus-medium-r-normal-*-28-*-*-*-*-iso10646-1,xft:WenQuanYi Micro Hei Mono:style=Regular:pixelsize=28:antialias=true\007
+URxvt.keysym.M-C-6: command:\033]50;-xos4-terminus-medium-r-normal-*-32-*-*-*-*-iso10646-1,xft:WenQuanYi Micro Hei Mono:style=Regular:pixelsize=32:antialias=true\007
 // URxvt*keysym.M-C-4: command:\033]50;-xos4-terminus-medium-r-normal-*-20-*-*-*-*-iso10646-1\007\033[8;38;128t
-URxvt.cutchars: `""''&()*,;<=>?@[]^{|}:#
+URxvt.cutchars: `""''&()*,;<=>?@[]^{|}:#│
