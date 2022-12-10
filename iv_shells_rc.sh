@@ -8,7 +8,7 @@ alias du='du -h'
 alias gear-hsh='ionice -c idle nice gear-hsh'
 alias gear-rpm='ionice -c idle nice gear-rpm'
 alias use_java=". use_java"
-
+alias udiff='git diff --no-index'
 
 export BROWSER=/usr/bin/firefox
 export EDITOR=vim
