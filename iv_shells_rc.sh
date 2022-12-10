@@ -20,7 +20,9 @@ export MYSQL_PS1="$(hostname -s) \h/\d> "
 export PYTHONSTARTUP="$HOME/.pythonrc.py"
 export MAVEN_OPTS="-Xmx2048m -XX:MaxPermSize=2048m"
 
-export LC_MESSAGES=POSIX
+export LC_MESSAGES=C.utf-8
+# unset LC_ALL
+# export LC_ALL
 
 # no org.a11y.Bus lookup
 export NO_AT_BRIDGE=1
