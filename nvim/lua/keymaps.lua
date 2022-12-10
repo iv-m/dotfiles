@@ -20,5 +20,11 @@ spmap('f',       tb.find_files, '[F]ind files')
 spmap('b',       tb.buffers,    '[B]uffer picker')
 spmap('j',       tb.jumplist,   '[J]umplist picker')
 spmap('t',       tb.tagstack,   '[T]agstack picker')
+spmap('\'',      tb.resume,     '[\'] Previous picker')
 spmap('/',       tb.current_buffer_fuzzy_find,
       '[/] Live fuzzy search in the current buffer')
+
+-- git pickers
+spmap('gs', tb.git_status,  '[G]it [S]tatus')
+spmap('gc', tb.git_commits, '[G]it [C]ommits')
+spmap('gb', tb.git_bcommits, '[G]it commits for current [B]uffer')
