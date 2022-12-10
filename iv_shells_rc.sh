@@ -1,6 +1,5 @@
 
 # User specific aliases and functions
-alias qgit="qgit --all"
 alias grep="grep --color=auto"
 alias mc='. /usr/lib/mc/mc-wrapper.sh'
 alias m='. /usr/lib/mc/mc-wrapper.sh -u'
