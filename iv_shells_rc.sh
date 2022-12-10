@@ -21,6 +21,8 @@ export MAVEN_OPTS="-Xmx2048m -XX:MaxPermSize=2048m"
 
 export LC_MESSAGES=POSIX
 
+# no org.a11y.Bus lookup
+export NO_AT_BRIDGE=1
 # . use_java 1.8
 
 sshs () {
