@@ -114,6 +114,17 @@ require('fidget').setup()
 -- {{{ Telescope
 
 local telescope = require('telescope')
+telescope.setup {
+  defaults = {
+    layout_config = {
+      horizontal = {
+        width = 0.95,
+        preview_width = 0.5,
+        preview_cutoff = 128
+      }
+    }
+  }
+}
 telescope.load_extension('fzf')
 
 -- }}}
