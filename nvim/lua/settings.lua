@@ -127,13 +127,15 @@ require('fidget').setup()
 local telescope = require('telescope')
 telescope.setup {
   defaults = {
+    sorting_strategy = 'ascending',
     layout_config = {
       horizontal = {
         width = 0.95,
+        preview_cutoff = 128,
         preview_width = 0.5,
-        preview_cutoff = 128
+        prompt_position = 'top',
       }
-    }
+    },
   }
 }
 telescope.load_extension('fzf')
