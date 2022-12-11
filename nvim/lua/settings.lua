@@ -3,7 +3,11 @@
 
 -- enable numbers
 vim.wo.number = true
-vim.wo.relativenumber = true
+vim.wo.relativenumber = false
+
+-- wrapping
+vim.o.wrap = false
+vim.o.linebreak = true
 
 -- disable mouse
 vim.o.mouse = ''
