@@ -27,6 +27,9 @@ vim.g.maplocalleader = ' '
 vim.o.foldmethod = 'marker'
 vim.o.foldenable = false
 
+-- timeouts: reduce those for whichkey
+vim.o.timeoutlen = 400
+
 -- }}}
 
 -- {{{ Colorscheme: onedark
