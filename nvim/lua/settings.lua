@@ -40,7 +40,11 @@ onedark.setup {
   style = 'cool',
   transparent = true,
   code_style = {
-    comments = 'none'
+    comments = 'none',
+  },
+  colors = {
+    fg = '#b0bbd0',
+    grey = '#686f7d',
   },
 }
 onedark.load()
