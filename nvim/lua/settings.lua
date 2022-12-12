@@ -86,7 +86,9 @@ local on_attach = function (_, bufnr)
   -- space mode
   nmap('<leader>r', vim.lsp.buf.rename, '[R]ename')
   -- nmap('<leader>a', vim.lsp.buf.code_action, 'Code [A]ction')
-  nmap('<leader>d', tb.diagnostics, '[D]iagnostics picker')
+  nmap('<leader>d', function () tb.diagnostics({bufnr=0}) end,
+       'Buffer [D]iagnostics picker')
+  nmap('<leader>D', tb.diagnostics, 'Workspace [D]iagnostics picker')
   nmap('<leader>s', tb.lsp_document_symbols, 'Document [S]ymbols')
   nmap('<leader>S', tb.lsp_workspace_symbols, 'Workspace [S]ymbols')
 
@@ -119,7 +121,14 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities(
 
 lspconfig.pylsp.setup {
   on_attach = on_attach,
-  capabilities = capabilities
+  capabilities = capabilities,
+  settings = { pylsp = { plugins = {
+    jedi_symbols = { all_scopes = false },
+    flake8 = { enabled = true },
+    pyflakes = { enabled = false },
+    mccabe = { enabled = false },
+    pycodestyle = { enabled = false },
+  }}}
 }
 
 lspconfig.rust_analyzer.setup {
