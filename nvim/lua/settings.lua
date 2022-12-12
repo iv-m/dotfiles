@@ -33,7 +33,6 @@ vim.o.timeoutlen = 400
 -- }}}
 
 -- {{{ Colorscheme: onedark
-
 vim.opt.termguicolors = true
 local onedark = require('onedark')
 onedark.setup {
@@ -48,8 +47,19 @@ onedark.setup {
   },
 }
 onedark.load()
-
 -- }}}
+
+-- {{{ listchars
+vim.opt.listchars = {
+  trail = '●',
+  nbsp = '␣',
+  tab = '←·→',
+  lead = '.'
+}
+vim.opt.list = false  -- breaks mouse selection copying
+vim.cmd [[hi Whitespace guibg=#3d4451]]
+-- }}}
+
 
 -- {{{ WhichKey
 require("which-key").setup {
