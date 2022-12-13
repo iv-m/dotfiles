@@ -24,6 +24,10 @@ spmap('\'',      tb.resume,     '[\'] Previous picker')
 spmap('/',       tb.current_buffer_fuzzy_find,
       '[/] Live fuzzy search in the current buffer')
 
+spmap('G', function ()
+  return tb.grep_string { word_match = '-w' }
+end, '[G]rep for stirng under cursor')
+
 -- git pickers
 spmap('gs', tb.git_status,  '[G]it [S]tatus')
 spmap('gc', tb.git_commits, '[G]it [C]ommits')
