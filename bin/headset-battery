@@ -1,0 +1,10 @@
+#!/bin/sh
+
+
+bat=$(headsetcontrol -b -c 2>/dev/null)
+
+if [ "$bat" -ge 0 ] 2>/dev/null; then
+    echo "🎧$bat%"
+else
+    echo
+fi
