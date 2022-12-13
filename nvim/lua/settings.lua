@@ -133,7 +133,12 @@ lspconfig.pylsp.setup {
 
 lspconfig.rust_analyzer.setup {
   on_attach = on_attach,
-  capabilities = capabilities
+  capabilities = capabilities,
+}
+
+lspconfig.clangd.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
 }
 
 -- turn on status information
