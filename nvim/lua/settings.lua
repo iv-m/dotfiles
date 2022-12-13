@@ -57,7 +57,7 @@ vim.opt.listchars = {
   lead = '.'
 }
 vim.opt.list = false  -- breaks mouse selection copying
-vim.cmd [[hi Whitespace guibg=#3d4451]]
+vim.cmd [[hi Whitespace guifg=#3d4451]]
 -- }}}
 
 
