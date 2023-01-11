@@ -128,7 +128,7 @@ lspconfig.pylsp.setup {
     pyflakes = { enabled = false },
     mccabe = { enabled = false },
     pycodestyle = { enabled = false },
-  }}}
+  } } }
 }
 
 lspconfig.rust_analyzer.setup {
@@ -143,6 +143,53 @@ lspconfig.clangd.setup {
 
 -- turn on status information
 require('fidget').setup()
+
+-- }}}
+
+
+-- {{{ Gitsigns
+
+require('gitsigns').setup {
+  on_attach = function(bufnr)
+    local gs = package.loaded.gitsigns
+    local function map(mode, l, r, opts)
+      opts = opts or {}
+      opts.buffer = bufnr
+      vim.keymap.set(mode, l, r, opts)
+    end
+
+    -- Navigation
+    map('n', '[c', function()
+      if vim.wo.diff then return '[c' end
+      vim.schedule(function() gs.prev_hunk() end)
+      return '<Ignore>'
+    end, {expr=true, desc='Gitsigns: previous hunk'})
+
+    map('n', ']c', function()
+      if vim.wo.diff then return ']c' end
+      vim.schedule(function() gs.next_hunk() end)
+      return '<Ignore>'
+    end, {expr=true, desc='Gitsigns: next hunk'})
+
+
+    -- Actions
+    map({'n', 'v'}, '<leader>ga', ':Gitsigns stage_hunk<CR>',
+        {desc='[G]itsigns: st[A]ge hunk'})
+    map({'n', 'v'}, '<leader>gr', ':Gitsigns reset_hunk<CR>',
+        {desc='[G]itsigns: [R]eset hunk'})
+
+    local function nlmap(l, r, desc)
+      vim.keymap.set('n', '<leader>' .. l, r, {buffer=bufnr, desc=desc})
+    end
+
+    nlmap('gp', gs.preview_hunk, '[G]itsigns: [P]review hunk')
+    nlmap('gb', function() gs.blame_line{full=true} end,
+          '[G]itsigns: full [B]lame this line')
+    nlmap('gd', gs.diffthis, '[G]itsigns: [D]iff this buffer')
+    nlmap('gD', function() gs.diffthis('HEAD') end,
+          '[G]itsigns: [D]iff this buffer against HEAD')
+  end
+}
 
 -- }}}
 

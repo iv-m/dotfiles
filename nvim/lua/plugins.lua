@@ -48,6 +48,12 @@ return require('packer').startup(function(use)
     },
   }
 
+  -- git stuff
+  use {
+    'lewis6991/gitsigns.nvim',
+    tag = 'release'
+  }
+
   -- Telescope stuff
   use {
     'nvim-telescope/telescope.nvim', branch = '0.1.x',

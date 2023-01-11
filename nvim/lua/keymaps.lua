@@ -30,5 +30,5 @@ end, '[G]rep for stirng under cursor')
 
 -- git pickers
 spmap('gs', tb.git_status,  '[G]it [S]tatus')
-spmap('gc', tb.git_commits, '[G]it [C]ommits')
-spmap('gb', tb.git_bcommits, '[G]it commits for current [B]uffer')
+spmap('gh', tb.git_bcommits, '[G]it [H]istory for current buffer')
+spmap('gH', tb.git_commits, '[G]it [H]istory')
