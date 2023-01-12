@@ -7,18 +7,18 @@ import readline
 import rlcompleter
 import atexit
 
-#Bind ‘TAB’ to complete
+# Bind ‘TAB’ to complete
 readline.parse_and_bind('tab:complete')
-#Set history file – ~\.pythonhistory
+# Set history file – ~\.pythonhistory
 
 histfile = os.path.join(os.environ['HOME'], '.pythonhistory')
-#Attempt read of histfile
+# Attempt read of histfile
 try:
     readline.read_history_file(histfile)
 except IOError:
     pass
 
-#Write history file at shell exit
+# Write history file at shell exit
 atexit.register(readline.write_history_file, histfile)
-#Cleanup
+# Cleanup
 del os, histfile, readline, rlcompleter
