@@ -54,6 +54,8 @@ onedark.setup {
 
 vim.cmd[[colorscheme onedark]]
 vim.cmd[[hi Statement gui=bold]]
+vim.cmd[[hi Exception gui=bold]]
+vim.cmd[[hi Label gui=bold]]
 vim.cmd[[hi Constant gui=bold]]
 
 -- }}}
