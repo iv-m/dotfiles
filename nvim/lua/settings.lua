@@ -32,21 +32,30 @@ vim.o.timeoutlen = 400
 
 -- }}}
 
--- {{{ Colorscheme: onedark
+-- {{{ Colorschemes
 vim.opt.termguicolors = true
+
 local onedark = require('onedark')
 onedark.setup {
   style = 'cool',
   transparent = true,
   code_style = {
     comments = 'none',
+    keywords = 'bold',
+    functions = 'bold',
   },
   colors = {
-    fg = '#b0bbd0',
+    -- fg = '#c0ccda',
+    fg = '#d0d0d0',
     grey = '#686f7d',
+    purple = '#ca74e4',
   },
 }
-onedark.load()
+
+vim.cmd[[colorscheme onedark]]
+vim.cmd[[hi Statement gui=bold]]
+vim.cmd[[hi Constant gui=bold]]
+
 -- }}}
 
 -- {{{ listchars
@@ -56,8 +65,8 @@ vim.opt.listchars = {
   tab = '←·→',
   lead = '.'
 }
-vim.opt.list = false  -- breaks mouse selection copying
-vim.cmd [[hi Whitespace guifg=#3d4451]]
+vim.opt.list = true
+vim.cmd [[hi Whitespace guifg=#3d4462]]
 -- }}}
 
 
