@@ -5,8 +5,8 @@ alias mc='. /usr/lib/mc/mc-wrapper.sh'
 alias m='. /usr/lib/mc/mc-wrapper.sh -u'
 alias df='df -h'
 alias du='du -h'
-alias gear-hsh='ionice -c idle nice gear-hsh'
-alias gear-rpm='ionice -c idle nice gear-rpm'
+alias gear-hsh='ionice -c idle nice gear-hsh --verbose'
+alias gear-rpm='ionice -c idle nice gear-rpm --verbose'
 alias use_java=". use_java"
 alias udiff='git diff --no-index'
 
