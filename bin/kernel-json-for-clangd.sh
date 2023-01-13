@@ -2,7 +2,6 @@
 
 set -xue
 
-[ -d .git ]
 [ -f .config ]
 
 ./scripts/clang-tools/gen_compile_commands.py "$@"
