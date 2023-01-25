@@ -20,6 +20,7 @@ spmap('f',       tb.find_files, '[F]ind files')
 spmap('b',       tb.buffers,    '[B]uffer picker')
 spmap('j',       tb.jumplist,   '[J]umplist picker')
 spmap('t',       tb.tagstack,   '[T]agstack picker')
+spmap('l',       tb.live_grep,  '[L]ive grep')
 spmap('\'',      tb.resume,     '[\'] Previous picker')
 spmap('/',       tb.current_buffer_fuzzy_find,
       '[/] Live fuzzy search in the current buffer')
