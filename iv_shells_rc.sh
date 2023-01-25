@@ -11,7 +11,7 @@ alias use_java=". use_java"
 alias udiff='git diff --no-index'
 
 export BROWSER=/usr/bin/firefox
-export EDITOR=vim
+export EDITOR=nvim
 export GCC_USE_CCACHE=1
 export ALTWRAP_LLVM_USE_CCACHE=1
 export ALTWRAP_LLVM_VERSION=15.0
