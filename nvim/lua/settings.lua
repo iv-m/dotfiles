@@ -142,10 +142,10 @@ lspconfig.pylsp.setup {
   } } }
 }
 
-lspconfig.rust_analyzer.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-}
+-- lspconfig.rust_analyzer.setup {
+--   on_attach = on_attach,
+--   capabilities = capabilities,
+-- }
 
 lspconfig.clangd.setup {
   on_attach = on_attach,
@@ -155,6 +155,28 @@ lspconfig.clangd.setup {
 
 -- turn on status information
 require('fidget').setup()
+
+
+-- rust tools + lsp
+require("rust-tools").setup {
+  server = {
+    on_attach = function(ctx, bufnr)
+      -- the usual LSP setup
+      on_attach(ctx, bufnr)
+
+      local rt = require("rust-tools")
+      -- Remap hover actions to rust-tools
+      vim.keymap.set("n", "K", rt.hover_actions.hover_actions,
+                     { buffer = bufnr, desc = "RT Hover Action" })
+    end
+  },
+  tools = {
+    inlay_hints = {
+      parameter_hints_prefix = " <- ",
+      other_hints_prefix = " => ",
+    }
+  }
+}
 
 -- }}}
 

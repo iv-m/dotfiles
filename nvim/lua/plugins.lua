@@ -48,6 +48,9 @@ return require('packer').startup(function(use)
     },
   }
 
+  -- rust extras
+  use 'simrat39/rust-tools.nvim'
+
   -- git stuff
   use {
     'lewis6991/gitsigns.nvim',
