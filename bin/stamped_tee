@@ -1,0 +1,7 @@
+#!/bin/sh
+
+LOG="${1:-$TMPDIR/$(basename $(pwd))-$(date '+%Y%m%d-%H%M%S').log}"
+
+gawk 'BEGIN{ts0=systime()}{print strftime("[%T]",systime()-ts0,1),$0;fflush();}' | tee "$LOG"
+
+echo >&2 "DONE, logged to $LOG"
