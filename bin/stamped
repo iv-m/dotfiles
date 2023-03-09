@@ -1,0 +1,30 @@
+#!/bin/bash
+
+set -eu
+
+tmpdir=$(mktemp -td)
+log_file="$TMPDIR/$(basename "$(pwd)")-$(date '+%Y%m%d-%H%M%S').log"
+
+cleanup () {
+    local exit_code="$1"
+    if [ -n "$tmpdir" ] && [ -d "$tmpdir" ] ; then
+        rm -rf "$tmpdir"
+    fi
+    echo "logs written to $log_file, exiting, code=$exit_code"
+    exit "$exit_code"
+}
+
+trap 'cleanup $?' EXIT
+trap 'cleanup 2' HUP INT QUIT TERM
+
+fifo="$tmpdir/fifo"
+mkfifo "$fifo"
+
+gawk -- '
+    BEGIN { ts0=systime() }
+    {
+        print strftime("[%T]", systime()-ts0, 1), $0;
+        fflush();
+    }' "$fifo" | tee "$log_file" &
+
+"$@" >"$fifo" 2>&1
