@@ -1,9 +1,6 @@
 
 set nocompatible
 
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-execute pathogen#infect()
-
 set backspace=indent,eol,start
 
 set t_Co=256
@@ -18,7 +15,7 @@ set termencoding=utf-8
 set nobackup
 set nowritebackup
 " swapfiles are just moved to a separate direcory
-set directory=/crypt/iv/.vimswap/
+execute 'set' 'directory='. expand('~') . '/.vimswap/'
 
 " these two line disable any bells:
 set visualbell
@@ -81,7 +78,7 @@ let g:netrw_browsex_viewer = 'xdg-open'
 au BufReadPost * call ReadUndo()
 au BufWritePost * call WriteUndo()
 func MyUndoFile()
-    return '/crypt/iv/.vimundo/' . substitute(expand('%:p'), '/', '__', 'g')
+    return expand('~') . '/.vimundo/' . substitute(expand('%:p'), '/', '__', 'g')
 endfunc
 
 func ReadUndo()
