@@ -19,6 +19,7 @@ export CCACHE_COMPRESS=1
 export MYSQL_PS1="$(hostname -s) \h/\d> "
 export PYTHONSTARTUP="$HOME/.pythonrc.py"
 export MAVEN_OPTS="-Xmx2048m -XX:MaxPermSize=2048m"
+export RUST_SRC_PATH=/usr/lib64/rustlib/src/rust/library/
 
 export LC_MESSAGES=C.utf-8
 # unset LC_ALL
