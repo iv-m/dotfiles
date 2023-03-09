@@ -1,0 +1,5 @@
+#!/bin/bash
+
+HOST="$1"
+
+exec urxvt -title "$HOST" -e ssh "$HOST" -t tmux att -E
