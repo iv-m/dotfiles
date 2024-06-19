@@ -5,3 +5,14 @@ alias	docs	"ALT Documentation project"	<docs@lists.altlinux.org>
 alias	sisyphus	"ALT Linux Sisyphus mailing list"	<sisyphus@lists.altlinux.org>
 
 #	persons
+alias aen Aleksey Novodvorsky <aen@basealt.ru>
+alias sin Evgeny Sinelnikov <sin@basealt.ru>
+alias antohami Антон Мидюков <antohami@basealt.ru>
+alias lvol Leontiy Volodin <lvol@altlinux.org>
+alias saratov Saratov BaseALT department <saratov@lists.altlinux.org>
+alias glebfm Gleb Fotengauer-Malinovskiy <glebfm@altlinux.org>
+alias ldv \"Dmitry V. Levin\" <ldv@altlinux.org>
+alias mike Michael Shigorin <mike@altlinux.org>
+alias manton Anton Movchan <manton@basealt.ru>
+alias alekseevamo Алексеева Мария <alekseevamo@basealt.ru>
+alias devel ALT Linux Team development discussions <devel@lists.altlinux.org>

@@ -41,7 +41,7 @@ set	include=yes
 # save replies to the current folder
 folder-hook . 'set record="^"'
 # but don't
-set copy=no
+# set copy=no
 
 # collpase threads by default
 folder-hook . "exec collapse-all"

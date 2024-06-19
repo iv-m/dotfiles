@@ -11,6 +11,7 @@ source	~/.neomutt/auto_views
 
 source	~/.neomutt/sidebar
 
-source	~/.neomutt/gmail
 source	~/.neomutt/gmail-priv
+source	~/.neomutt/gmail
+# source	~/.neomutt/gmail-oauth
 source	~/.neomutt/gmail-keys

@@ -25,15 +25,17 @@ mailboxes = +/ \
 +ALTLinux/SBC \
 +ALTLinux/Sisyphus \
 +ALTLinux/Wiki \
++Alt-Other/Newbies \
 +BaseAlt \
-+BaseAlt/Recycler \
++BaseAlt/R-Mipsel \
++BaseAlt/R-Risc-V \
++BaseAlt/R-LA64 \
 +BaseAlt/Redmine \
 +BaseAlt/Robots \
 +BaseAlt/Talk \
++Devel/Debugedit \
 +Bugz \
 +GitHub \
 +Kerberos \
-+Samba \
 +Saratov \
-+Security
 
