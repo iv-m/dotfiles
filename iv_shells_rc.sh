@@ -7,6 +7,7 @@ alias df='df -h'
 alias du='du -h'
 alias gear-hsh='ionice -c idle nice gear-hsh --verbose'
 alias gear-rpm='ionice -c idle nice gear-rpm --verbose'
+alias gear='ionice -c idle nice gear --verbose'
 alias use_java=". use_java"
 alias udiff='git diff --no-index'
 
