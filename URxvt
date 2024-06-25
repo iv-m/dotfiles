@@ -11,6 +11,8 @@ URxvt.fadeColor: black
 //URxvt.background: #0c1000
 URxvt.background: #0F1b00
 //URxvt.background: #50A0A0
+URxvt.color4: #2233ff
+//URxvt.color4: #0000ff
 URxvt.jumpScroll: true
 URxvt.skipScroll: true
 URxvt.inheritPixmap: false
