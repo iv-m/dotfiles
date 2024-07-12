@@ -1,26 +1,25 @@
 #!/bin/bash
 
+retry () {
+    local max="$1"
+    shift
+    for attempt in $(seq 1 "$max"); do
+        "$@" && break;
+        sleep 1s
+    done
+}
+
 phones_on () {
     /usr/sbin/rfkill unblock bluetooth ||:
     #sudo hciconfig hci0 up
-    sleep 1s
-    (
-        # echo "power off"
-        # sleep 1s
-        echo "power on"
-        sleep 1s
-        echo "connect 34:C7:31:FD:BD:14"
-        sleep 7s
-    ) | bluetoothctl
-
-    phones_def
+    retry 5 bluetoothctl power on
+    sleep .5s
+    retry 5 bluetoothctl connect 34:C7:31:FD:BD:14
 }
 
 phones_off () {
-    (
-        echo "power off"
-        sleep 1s
-    ) | bluetoothctl
+    bluetoothctl power off
+    sleep 1s
 }
 
 phones_def () {
