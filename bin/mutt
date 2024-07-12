@@ -4,5 +4,5 @@ if [ "$TERM" == "screen" ]; then
     export TERM=screen-256color
 fi
 
-cd /crypt/iv/Downloads/
+cd "$HOME/Downloads/"
 exec /usr/bin/neomutt "$@"
