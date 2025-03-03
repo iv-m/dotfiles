@@ -9,7 +9,7 @@ color	error	red	default
 #  such as the incremental count at startup.
 #  It is nice to see on startup that
 #  color actually works.  :-)
-color	message	brightwhite	blue
+color	message	brightwhite	color18
 
 ## ==================================================
 ## Special COLORs for the Folder INDEX
@@ -17,14 +17,15 @@ color	message	brightwhite	blue
 
 #  The  "indicator" for the "current message" -
 #  whether it is an arrow or an "inverse line":
-color	indicator	brightwhite	color22
+color	indicator	brightwhite	color18
 
 #        "status" lines in the folder index.
 #        used for the mini-help line.
-color	status	black	color245
+color	status	white	color18
 
-# same color for sidebar divider
-color	sidebar_divider	black	color245
+# same color for sidebar divider and indicator
+color	sidebar_divider	black	color18
+color	sidebar_indicator	brightwhite	color18
 
 #  The  "tree" display of threads within the folder index.
 color	tree	blue	default
@@ -90,6 +91,10 @@ color	index	magenta	default	"! ~C ."
 #  mail from myself *and* to myself (TODO items):
 #color	index	yellow	default	'~f ldv ~p'
 
+color	index	color153 default '~f iv@altlinux.org'
+color	index	color153 default '~f iv@basealt.ru'
+color	index	color153 default '~f ivan.a.melnikov@gmail.com'
+
 #  the pattern "~p" means "from myself" - but alas
 #  there is no pattern for "*from* myself"  :-(
 
@@ -101,7 +106,7 @@ color	index	magenta	default	"! ~C ."
 #  color index green        black  '! ~p'
 
 #  "DONE mails" ie those I have already replied to.
-color	index	green	default	'~Q'
+# color	index	green	default	'~Q'
 
 #  MailList - these messages have been sent to
 #  a known mailing list.  What do these do in my mailbox??
@@ -131,5 +136,11 @@ color	search	white	blue
 #  The  "markers" indicate a wrapped line
 #  when showing messages with looong lines.
 color	markers	white	yellow
+
+# For mail from girars
+color	index	color78 default		"~s DONE"
+color	index	color210 default	"~s FAILED"
+color	index	white red		"~s FAILURE"
+color	index	color186 default	"~s TESTED"
 
 #EOF  vim: tw=999

@@ -2,11 +2,12 @@
 # is used because paths are expanded when parsed
 set	alias_file=~/.neomutt/alias
 
+set	auto_edit
 set	edit_headers
 set	editor="vim -c 'set ft=mail tw=74'"
 
 set	ignore_list_reply_to
-set	index_format="%4C %Z %{%b %d} %-31.31F (%4l) %s"
+set	index_format="%-40.40F %3<M?+%M> %Z %{%b %d} %s"
 
 set	menu_scroll
 set	mime_forward=ask-no
@@ -37,15 +38,28 @@ set	quote_regex="^([ \t]*[|>:}])+"
 set	fast_reply=yes
 set	include=yes
 
-
 # save replies to the current folder
 folder-hook . 'set record="^"'
 # but don't
 # set copy=no
 
 # collpase threads by default
-folder-hook . "exec collapse-all"
+# folder-hook . "<collapse-all><first-entry><last-entry>"
+set	collapse_all=yes
+
+# expand threads with unread messages
+set	collapse_unread=no
+
+# avoid almost-empty screens
+set	menu_move_off=no
 
 set	rfc2047_parameters=yes
 
 set	sleep_time=0
+
+# stats ftw
+set	mail_check_stats=yes
+
+# cursor -- I like my message colors
+set	arrow_string=">>"
+set	arrow_cursor=yes

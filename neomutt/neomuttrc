@@ -6,10 +6,12 @@ source	~/.neomutt/header
 source	~/.neomutt/folder
 source	~/.neomutt/gpg
 source	~/.neomutt/lists
-source	~/.neomutt/color
 source	~/.neomutt/auto_views
 
 source	~/.neomutt/sidebar
+
+# color should go last, to be able to override colors in the theme
+source	~/.neomutt/color
 
 source	~/.neomutt/gmail-priv
 source	~/.neomutt/gmail

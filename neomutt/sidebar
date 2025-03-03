@@ -1,6 +1,6 @@
 
 set sidebar_visible
-set sidebar_format = "%B%*  %?N?%N?"
+set sidebar_format = "%D%*  %<Z?%Z>"
 # set mail_check_stats
 
 set sidebar_short_path                  # Shorten mailbox names
