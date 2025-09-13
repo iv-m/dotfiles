@@ -8,11 +8,8 @@ URxvt.foreground: white
 //URxvt.foreground: black
 URxvt.fading: 22
 URxvt.fadeColor: black
-//URxvt.background: #0c1000
-URxvt.background: #0F1b00
-//URxvt.background: #50A0A0
-URxvt.color4: #2233ff
-//URxvt.color4: #0000ff
+URxvt.background: #09000F
+URxvt*color4: #2244FF
 URxvt.jumpScroll: true
 URxvt.skipScroll: true
 URxvt.inheritPixmap: false
@@ -55,3 +52,6 @@ URxvt.keysym.M-C-8: command:\033]50;xft:Noto Sans Mono Condensed::style=Regular:
 URxvt.keysym.M-C-9: command:\033]50;xft:Noto Sans Mono Condensed::style=Regular:pixelsize=32:antialias=true,xft:WenQuanYi Micro Hei Mono:style=Regular:pixelsize=32:antialias=true\007
 URxvt.keysym.M-C-0: command:\033]50;xft:Noto Sans Mono Condensed::style=Regular:pixelsize=42:antialias=true,xft:WenQuanYi Micro Hei Mono:style=Regular:pixelsize=42:antialias=true\007
 URxvt.cutchars: `""''&()*,;<=>?@[]^{|}:#│
+URxvt.bell-command: /bin/true
+URxvt.iso14755: false
+URxvt.iso14755_52: false
