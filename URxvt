@@ -47,8 +47,11 @@ URxvt.keysym.C-Page_Down: \033[6;6~
 URxvt.keysym.M-C-1: command:\033]50;-xos4-terminus-medium-r-normal-*-12-*-*-*-*-iso10646-1,xft:WenQuanYi Micro Hei Mono:style=Regular:pixelsize=12:antialias=true\007
 URxvt.keysym.M-C-2: command:\033]50;-xos4-terminus-medium-r-normal-*-14-*-*-*-*-iso10646-1,xft:WenQuanYi Micro Hei Mono:style=Regular:pixelsize=14:antialias=true\007
 URxvt.keysym.M-C-3: command:\033]50;-xos4-terminus-medium-r-normal-*-20-*-*-*-*-iso10646-1,xft:WenQuanYi Micro Hei Mono:style=Regular:pixelsize=20:antialias=true\007
-URxvt.keysym.M-C-4: command:\033]50;-xos4-terminus-medium-r-normal-*-24-*-*-*-*-iso10646-1,xft:WenQuanYi Micro Hei Mono:style=Regular:pixelsize=24:antialias=true\007
-URxvt.keysym.M-C-5: command:\033]50;-xos4-terminus-medium-r-normal-*-28-*-*-*-*-iso10646-1,xft:WenQuanYi Micro Hei Mono:style=Regular:pixelsize=28:antialias=true\007
-URxvt.keysym.M-C-6: command:\033]50;-xos4-terminus-medium-r-normal-*-32-*-*-*-*-iso10646-1,xft:WenQuanYi Micro Hei Mono:style=Regular:pixelsize=32:antialias=true\007
-// URxvt*keysym.M-C-4: command:\033]50;-xos4-terminus-medium-r-normal-*-20-*-*-*-*-iso10646-1\007\033[8;38;128t
+URxvt.keysym.M-C-4: command:\033]50;-xos4-terminus-medium-r-normal-*-22-*-*-*-*-iso10646-1,xft:WenQuanYi Micro Hei Mono:style=Regular:pixelsize=22:antialias=true\007
+URxvt.keysym.M-C-5: command:\033]50;-xos4-terminus-medium-r-normal-*-24-*-*-*-*-iso10646-1,xft:WenQuanYi Micro Hei Mono:style=Regular:pixelsize=24:antialias=true\007
+URxvt.keysym.M-C-6: command:\033]50;-xos4-terminus-medium-r-normal-*-28-*-*-*-*-iso10646-1,xft:WenQuanYi Micro Hei Mono:style=Regular:pixelsize=28:antialias=true\007
+URxvt.keysym.M-C-7: command:\033]50;-xos4-terminus-medium-r-normal-*-32-*-*-*-*-iso10646-1,xft:WenQuanYi Micro Hei Mono:style=Regular:pixelsize=32:antialias=true\007
+URxvt.keysym.M-C-8: command:\033]50;xft:Noto Sans Mono Condensed::style=Regular:pixelsize=28:antialias=true,xft:WenQuanYi Micro Hei Mono:style=Regular:pixelsize=28:antialias=true\007
+URxvt.keysym.M-C-9: command:\033]50;xft:Noto Sans Mono Condensed::style=Regular:pixelsize=32:antialias=true,xft:WenQuanYi Micro Hei Mono:style=Regular:pixelsize=32:antialias=true\007
+URxvt.keysym.M-C-0: command:\033]50;xft:Noto Sans Mono Condensed::style=Regular:pixelsize=42:antialias=true,xft:WenQuanYi Micro Hei Mono:style=Regular:pixelsize=42:antialias=true\007
 URxvt.cutchars: `""''&()*,;<=>?@[]^{|}:#│
