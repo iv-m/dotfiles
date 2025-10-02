@@ -85,8 +85,6 @@ require("which-key").setup {
 
 -- {{{ LSP
 
-local lspconfig = require('lspconfig')
-
 local on_attach = function (_, bufnr)
   local nmap = function (keys, func, desc)
     if desc then desc = 'LSP: ' .. desc end
@@ -130,7 +128,7 @@ end
 local capabilities = require('cmp_nvim_lsp').default_capabilities(
 	vim.lsp.protocol.make_client_capabilities())
 
-lspconfig.pylsp.setup {
+vim.lsp.config("pylsp", {
   on_attach = on_attach,
   capabilities = capabilities,
   settings = { pylsp = { plugins = {
@@ -140,18 +138,13 @@ lspconfig.pylsp.setup {
     mccabe = { enabled = false },
     pycodestyle = { enabled = false },
   } } }
-}
+})
 
--- lspconfig.rust_analyzer.setup {
---   on_attach = on_attach,
---   capabilities = capabilities,
--- }
-
-lspconfig.clangd.setup {
+vim.lsp.config("clangd", {
   on_attach = on_attach,
   capabilities = capabilities,
   autostart = false,
-}
+})
 
 -- turn on status information
 require('fidget').setup()
