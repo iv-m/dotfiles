@@ -1,3 +1,3 @@
 #!/bin/bash
 
-exec urxvt -title "$(hostname -s)" -tr -geometry 144x42 -e tmux att
+exec alacritty --title "$(hostname -s)" -e tmux att

@@ -1,4 +1,5 @@
 #!/bin/bash
 
-exec urxvt -e mosh ${1:-ws} --server='systemd-run --scope --user mosh-server new' -- tmux att
+HOST="${1:-work}"
 
+exec alacritty --title "$HOST" -e mosh "$HOST" --server='systemd-run --scope --user mosh-server new' -- /usr/bin/env TERM="rxvt-unicode-256color" tmux att
