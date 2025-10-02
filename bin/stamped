@@ -2,8 +2,16 @@
 
 set -eu
 
+last_arg=$(eval "echo \${$#}")
+if [ -e "$last_arg" ]; then
+    log_prefix=${last_arg%%.*}
+else
+    log_prefix=$(basename "$(pwd)")
+fi
+
+
 tmpdir=$(mktemp -td)
-log_file="$TMPDIR/$(basename "$(pwd)")-$(date '+%Y%m%d-%H%M%S').log"
+log_file="$TMPDIR/$log_prefix-$(date '+%Y%m%d-%H%M%S').log"
 
 cleanup () {
     local exit_code="$1"
