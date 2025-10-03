@@ -49,7 +49,7 @@ return require('packer').startup(function(use)
   }
 
   -- rust extras
-  use 'simrat39/rust-tools.nvim'
+  use 'mrcjkb/rustaceanvim'
 
   -- git stuff
   use {

@@ -146,11 +146,33 @@ vim.lsp.config("clangd", {
   autostart = false,
 })
 
+vim.g.rustaceanvim = {
+  server = {
+    on_attach = function (ctx, bufnr)
+      -- the usual LSP setup
+      on_attach(ctx, bufnr)
+
+      vim.keymap.set({'n', 'v'}, '<leader>a',
+        function () vim.cmd.RustLsp('codeAction') end,
+        { silent = true, buffer = bufnr, desc = 'LSP Code [A]ctions'})
+      vim.keymap.set({'n', 'v'}, '<leader>O',
+        function () vim.cmd.RustLsp('openDocs') end,
+        { silent = true, buffer = bufnr, desc = 'RustLSP: [O]pen docs.rs documentation'})
+
+      vim.keymap.set({'n', 'v'}, 'J',
+        function() vim.cmd.RustLsp('joinLines') end,
+        { silent = true, buffer = bufnr, desc = 'RustLSP smart join lines' })
+      vim.keymap.set("n", "K",
+        function() vim.cmd.RustLsp({'hover', 'actions'}) end,
+        { silent = true, buffer = bufnr, desc = 'RustLSP Hover Documentation' })
+    end,
+  },
+}
+
 -- turn on status information
 require('fidget').setup()
 
 -- }}}
-
 
 -- {{{ Gitsigns
 
