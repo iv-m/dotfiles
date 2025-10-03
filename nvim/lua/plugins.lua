@@ -65,6 +65,9 @@ return require('packer').startup(function(use)
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   use {'nvim-telescope/telescope-ui-select.nvim' }
 
+  -- Other languages
+  use {'vala-lang/vala.vim'}
+
   if packer_bootstrap then
     require('packer').sync()
   end
