@@ -1,5 +1,6 @@
 text/x-diff; tr -d '\\r' ; copiousoutput
 text/x-patch; tr -d '\\r' ; copiousoutput
+text/markdown; tr -d '\\r' ; copiousoutput
 application/text/x-diff; tr -d '\\r' ; copiousoutput
 application/gzip; zcat ; copiousoutput
 application/x-gzip; zcat ; copiousoutput
@@ -7,3 +8,5 @@ application/pgp; cat; copiousoutput
 application/pgp-keys; pgp -f < %s ; copiousoutput
 application/pgp-signature; cat ; copiousoutput
 text/html; elinks -dump %s ; copiousoutput
+application/ics; icalendar %s; copiousoutput
+text/calendar; icalendar %s ; copiousoutput
