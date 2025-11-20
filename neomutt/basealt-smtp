@@ -1,0 +1,8 @@
+set from = "iv@basealt.ru"
+set realname = "Иван Мельников"
+set spoolfile = "+BaseAlt"
+set postponed ="+[Gmail]/Drafts"
+set signature = "~/.neomutt/signature-basealt"
+
+source	~/.neomutt/basealt-priv
+

@@ -1,2 +1,8 @@
 
+reply-hook "~t iv@altlinux.org" 'source ~/.neomutt/alt-smtp'
+reply-hook "~t iv@basealt.ru" 'source ~/.neomutt/basealt-smtp'
+
+# alt is the default
 source  ~/.neomutt/alt-smtp
+
+
