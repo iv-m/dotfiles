@@ -1,26 +1,24 @@
-set folder = "imaps://imap.gmail.com:993"
-set header_cache = ~/.neomutt/cache/headers
-set message_cachedir = ~/.neomutt/cache/bodies
+set mbox_type = Maildir
+set folder = "~/.mail/gmail/"
 set certificate_file = ~/.neomutt/certificates
+set header_cache = ~/.neomutt/cache/headers
 set move = no 
-set imap_keepalive = 900
 
-unset imap_passive
-set mail_check=90
-set timeout=5
-
-mailboxes = +/ \
+mailboxes = -label "== GMAIL == " +/ \
++Inbox \
 +ALTLinux \
++ALTLinux/Devel \
 +ALTLinux/BuildBots \
 +ALTLinux/Cybertalk \
 +ALTLinux/Devel \
 +ALTLinux/Distro \
-+ALTLinux/P9 \
 +ALTLinux/Ports \
 +ALTLinux/SBC \
 +ALTLinux/Sisyphus \
 +ALTLinux/Wiki \
++ALTLinux/QA \
 +Alt-Other/Newbies \
++Alt-Other/Community \
 +BaseAlt \
 +BaseAlt/R-Mipsel \
 +BaseAlt/R-Risc-V \
@@ -33,5 +31,4 @@ mailboxes = +/ \
 +Bugz \
 +GitHub \
 +Kerberos \
-+Saratov \
-
++Saratov

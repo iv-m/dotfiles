@@ -13,7 +13,9 @@ source	~/.neomutt/sidebar
 # color should go last, to be able to override colors in the theme
 source	~/.neomutt/color
 
-source	~/.neomutt/gmail-priv
-source	~/.neomutt/gmail
+#source	~/.neomutt/gmail
 # source	~/.neomutt/gmail-oauth
-source	~/.neomutt/gmail-keys
+#source	~/.neomutt/gmail-keys
+
+source	~/.neomutt/maildirs
+source  ~/.neomutt/smtp

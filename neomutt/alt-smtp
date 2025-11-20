@@ -1,0 +1,8 @@
+set from = "iv@altlinux.org"
+set realname = "Ivan A. Melnikov"
+set spoolfile = "+INBOX"
+set postponed ="+[Gmail]/Drafts"
+set smtp_url = "smtp://ivan.a.melnikov@smtp.gmail.com:587/"
+set signature = "~/.neomutt/signature-alt"
+
+source	~/.neomutt/gmail-priv
