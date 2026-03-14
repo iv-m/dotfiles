@@ -4,7 +4,7 @@ set	crypt_replyencrypt=yes
 set	crypt_replysignencrypted=yes
 
 set	pgp_use_gpg_agent=yes
-set	pgp_sign_as=2A82451F
+set	pgp_sign_as=9806955EFC250B8F143E1B3B231696D4BC44C1EE
 #set	pgp_sign_micalg=pgp-sha1
 
 #	decode application/pgp
