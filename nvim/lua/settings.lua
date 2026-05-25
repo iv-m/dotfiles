@@ -32,6 +32,18 @@ vim.o.timeoutlen = 400
 
 -- }}}
 
+-- {{{ filetype-specific options
+
+-- ignore editorconfig for spec files
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "spec",
+  callback = function()
+    vim.b.editorconfig = false
+  end,
+})
+
+-- }}}
+
 -- {{{ Colorschemes
 vim.opt.termguicolors = true
 
