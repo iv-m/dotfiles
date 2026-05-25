@@ -160,6 +160,7 @@ vim.lsp.config("clangd", {
 
 vim.g.rustaceanvim = {
   server = {
+    auto_attach = false,
     on_attach = function (ctx, bufnr)
       -- the usual LSP setup
       on_attach(ctx, bufnr)
@@ -178,6 +179,9 @@ vim.g.rustaceanvim = {
         function() vim.cmd.RustLsp({'hover', 'actions'}) end,
         { silent = true, buffer = bufnr, desc = 'RustLSP Hover Documentation' })
     end,
+  },
+  dap = {
+    autoload_configurations = false,
   },
 }
 
