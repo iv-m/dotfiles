@@ -35,7 +35,7 @@ syntax on
 
 set listchars=tab:»→,space:·,eol:$
 
-colorscheme ron
+set background=dark
 colorscheme default
 hi Operator ctermfg=11
 hi Label ctermfg=11
