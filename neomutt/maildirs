@@ -1,4 +1,3 @@
-set mbox_type = Maildir
 set folder = "~/.mail/gmail/"
 set certificate_file = ~/.neomutt/certificates
 set header_cache = ~/.neomutt/cache/headers
