@@ -19,3 +19,5 @@ source	~/.neomutt/color
 
 source	~/.neomutt/maildirs
 source  ~/.neomutt/smtp
+
+source  ~/.neomutt/macros
