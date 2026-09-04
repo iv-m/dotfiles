@@ -49,12 +49,15 @@ return require('packer').startup(function(use)
   }
 
   -- rust extras
-  use 'mrcjkb/rustaceanvim'
+  use {
+    'mrcjkb/rustaceanvim',
+    tag = 'main',
+  }
 
   -- git stuff
   use {
     'lewis6991/gitsigns.nvim',
-    tag = 'release'
+    tag = 'main'
   }
 
   -- Telescope stuff
