@@ -7,7 +7,12 @@ set	edit_headers
 set	editor="vim -c 'set ft=mail tw=74'"
 
 set	ignore_list_reply_to
-set	index_format="%-40.40F %3<M?+%M> %Z %{%b %d} %s"
+
+# ~P matches messages from me, ~A all the others
+index-format-hook FF "~P" "To %r"
+index-format-hook FF "~A" "%f"
+
+set	index_format="%{%b %d} %Z %-42.42@FF@ %2<M?%M> %s"
 
 set	menu_scroll
 set	mime_forward=ask-no
