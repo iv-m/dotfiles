@@ -67,7 +67,7 @@ set	mail_check_stats=yes
 
 # cursor -- I like my message colors
 set	arrow_string=">>"
-set	arrow_cursor=yes
+set	arrow_cursor=no
 
 # mbox type: only affects new mail boxes
 set	mbox_type=mbox

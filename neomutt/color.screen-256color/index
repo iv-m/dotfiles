@@ -17,15 +17,16 @@ color	message	brightwhite	color25
 
 #  The  "indicator" for the "current message" -
 #  whether it is an arrow or an "inverse line":
-color	indicator	brightwhite	color25
+color	indicator	default	 color235
 
 #        "status" lines in the folder index.
 #        used for the mini-help line.
-color	status	white	color25
+color	status	white	color238
 
 # same color for sidebar divider and indicator
-color	sidebar_divider	black	color25
-color	sidebar_indicator	brightwhite	color25
+color	sidebar_divider	black	color238
+color	sidebar_indicator	brightwhite	color238
+color	sidebar_highlight	brightwhite	color235
 
 #  The  "tree" display of threads within the folder index.
 color	tree	blue	default
