@@ -73,6 +73,9 @@ color	body	color177	default	"(^| +)\\$[a-zA-Z][-_a-zA-Z0-9]+"
 #	Task and bug IDs ("#42")
 color	body	color177	default	"(^| +)#[0-9]+"
 
+#       ALT Linux Bugs
+color	body	color177	default	"alt *(bug *)?(: *)?#[0-9]+"
+
 ## ===========================================================
 ## COLOR for the BODY  - Miscellaneous
 ## ===========================================================
