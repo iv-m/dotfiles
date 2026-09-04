@@ -22,7 +22,7 @@ mailboxes = +/ \
 +ALTLinux/Wiki \
 +Alt-Other/Newbies \
 +BaseAlt \
-+BaseAlt/R-Mipsel \
++BaseAlt/KernelBot \
 +BaseAlt/R-Risc-V \
 +BaseAlt/R-LA64 \
 +BaseAlt/R-P11-LA64 \
