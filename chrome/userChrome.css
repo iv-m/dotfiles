@@ -1,7 +1,6 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); /* set default namespace to XUL */
 @namespace html url("http://www.w3.org/1999/xhtml");
 
-
 textarea, input, select {
   -moz-appearance: none !important;
   background-color: #FFFFFF !important;
@@ -23,4 +22,5 @@ html|sidebar-panel-header {
 
 #sidebar-box {
   padding: 0 !important;
+  min-width: 10px !important;
 }
