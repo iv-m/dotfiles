@@ -1,4 +1,6 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); /* set default namespace to XUL */
+@namespace html url("http://www.w3.org/1999/xhtml");
+
 
 textarea, input, select {
   -moz-appearance: none !important;
@@ -12,4 +14,13 @@ textarea, input, select {
 
 #sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header {
   display: none;
+}
+
+html|sidebar-panel-header {
+  visibility: collapse !important;
+  display: none !important;
+}
+
+#sidebar-box {
+  padding: 0 !important;
 }
