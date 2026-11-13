@@ -141,7 +141,7 @@ color	markers	white	yellow
 # For mail from girars
 color	index	color78 default		"~s DONE"
 color	index	color210 default	"~s FAILED"
-color	index	white red		"~s FAILURE"
+color	index	bold color203 default	"~s FAILURE"
 color	index	color186 default	"~s TESTED"
 
 #EOF  vim: tw=999
