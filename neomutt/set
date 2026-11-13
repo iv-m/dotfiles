@@ -71,3 +71,6 @@ set	arrow_cursor=no
 
 # mbox type: only affects new mail boxes
 set	mbox_type=mbox
+
+# register adresses as mine
+alternates	iv@altlinux.org|iv@basealt.ru|ivan.a.melnikov@gmail.com
