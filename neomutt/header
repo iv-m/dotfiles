@@ -1,3 +1,4 @@
-hdr_order	date from to cc bcc subject
 ignore		*
-unignore	Date From: To Cc Bcc Subject
+unignore	Message-ID Date From To Cc Bcc Subject
+unhdr_order	*
+hdr_order	Message-ID Date From To Cc Bcc Subject

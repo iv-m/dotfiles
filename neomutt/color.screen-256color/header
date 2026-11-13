@@ -5,6 +5,7 @@ color	hdrdefault	color75	default
 ## =============================================================
 
 #	Most important lines
+color	header	brightcyan	default	"^message-id: "
 color	header	brightcyan	default	"^date: "
 color	header	brightcolor75	default	"^from:? "
 color	header	brightcolor78	default	"^to:? "
