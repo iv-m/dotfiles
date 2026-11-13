@@ -10,6 +10,7 @@ alias gear-rpm='ionice -c idle nice stamped gear-rpm --verbose'
 alias gear='ionice -c idle nice gear --verbose'
 alias use_java=". use_java"
 alias udiff='git diff --no-index'
+alias udate='date "+%F %T %:::z"'
 
 export BROWSER=/usr/bin/firefox
 export EDITOR=nvim
